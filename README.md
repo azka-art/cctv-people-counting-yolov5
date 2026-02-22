@@ -6,7 +6,7 @@ CCTV-like **People Detection & Counting** system built for monitoring passenger 
 
 ## Why This Matters for TransJakarta
 
-TransJakarta serves over 1 million daily trips across hundreds of BRT shelters (halte) throughout Jakarta. Overcrowding at stations during peak hours creates safety risks and degrades service quality. This system provides automated passenger counting from CCTV feeds to:
+TransJakarta serves over 1 million daily trips across hundreds of BRT shelters (halte) throughout Jakarta ([source: ~1.4 million trips/day reported in 2025](https://transjakarta.co.id/)). Overcrowding at stations during peak hours creates safety risks and degrades service quality. This system provides automated passenger counting from CCTV feeds to:
 
 - **Monitor station capacity** — detect when platforms approach unsafe density levels
 - **Optimize fleet dispatch** — route additional buses to high-demand corridors
