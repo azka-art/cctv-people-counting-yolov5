@@ -42,6 +42,8 @@ Evaluasi dilakukan pada dataset MOT20-01 (429 frames) dengan dua mode:
 
 Enhanced mode mengurangi MAE sebesar **67%** dan meningkatkan recall sebesar **86%** (F1 +37%).
 
+> **Catatan scope:** Ringkasan statistik di atas hanya mencakup evaluasi kuantitatif pada MOT20-01. Kasus 2, 3, dan 4 di bawah berasal dari observasi kualitatif pada `demo_input.mp4` (tanpa ground truth formal) dan didokumentasikan untuk menunjukkan failure mode yang relevan dengan skenario halte TransJakarta.
+
 ---
 
 ## Kasus Analisis
@@ -157,7 +159,7 @@ Penumpang berada di antara sumber cahaya kuat (sinar matahari dari pintu masuk) 
 | Atribut | Detail |
 |---|---|
 | **Tipe Error** | False Negative (FN) |
-| **Frame / Lokasi** | `MOT20-02`, frame 89 |
+| **Frame / Lokasi** | `MOT20-01`, frame 89 |
 | **Ground Truth Count** | 22 orang |
 | **Predicted Count** | 11 orang |
 | **Error** | -11 (undercount 50%) |
