@@ -6,7 +6,13 @@
     "total_frames": 429,
     "mae": 32.38,
     "mape": 69.78,
-    "avg_fps": 6.01,
+    "precision": 0.9831,
+    "recall": 0.2958,
+    "f1_score": 0.4547,
+    "total_tp": 5877,
+    "total_fp": 101,
+    "total_fn": 13993,
+    "avg_fps": 3.59,
     "frames_with_overcount": 0,
     "frames_with_undercount": 429,
     "frames_exact": 0,
@@ -18,3003 +24,4290 @@
       "ground_truth": 36,
       "predicted": 14,
       "error": -22,
-      "abs_error": 22
+      "abs_error": 22,
+      "tp": 14,
+      "fp": 0,
+      "fn": 22
     },
     {
       "frame": 2,
       "ground_truth": 36,
       "predicted": 13,
       "error": -23,
-      "abs_error": 23
+      "abs_error": 23,
+      "tp": 13,
+      "fp": 0,
+      "fn": 23
     },
     {
       "frame": 3,
       "ground_truth": 36,
       "predicted": 13,
       "error": -23,
-      "abs_error": 23
+      "abs_error": 23,
+      "tp": 13,
+      "fp": 0,
+      "fn": 23
     },
     {
       "frame": 4,
       "ground_truth": 36,
       "predicted": 13,
       "error": -23,
-      "abs_error": 23
+      "abs_error": 23,
+      "tp": 13,
+      "fp": 0,
+      "fn": 23
     },
     {
       "frame": 5,
       "ground_truth": 36,
       "predicted": 12,
       "error": -24,
-      "abs_error": 24
+      "abs_error": 24,
+      "tp": 12,
+      "fp": 0,
+      "fn": 24
     },
     {
       "frame": 6,
       "ground_truth": 36,
       "predicted": 13,
       "error": -23,
-      "abs_error": 23
+      "abs_error": 23,
+      "tp": 12,
+      "fp": 1,
+      "fn": 24
     },
     {
       "frame": 7,
       "ground_truth": 36,
       "predicted": 13,
       "error": -23,
-      "abs_error": 23
+      "abs_error": 23,
+      "tp": 13,
+      "fp": 0,
+      "fn": 23
     },
     {
       "frame": 8,
       "ground_truth": 36,
       "predicted": 13,
       "error": -23,
-      "abs_error": 23
+      "abs_error": 23,
+      "tp": 13,
+      "fp": 0,
+      "fn": 23
     },
     {
       "frame": 9,
       "ground_truth": 36,
       "predicted": 13,
       "error": -23,
-      "abs_error": 23
+      "abs_error": 23,
+      "tp": 13,
+      "fp": 0,
+      "fn": 23
     },
     {
       "frame": 10,
       "ground_truth": 36,
       "predicted": 12,
       "error": -24,
-      "abs_error": 24
+      "abs_error": 24,
+      "tp": 12,
+      "fp": 0,
+      "fn": 24
     },
     {
       "frame": 11,
       "ground_truth": 36,
       "predicted": 12,
       "error": -24,
-      "abs_error": 24
+      "abs_error": 24,
+      "tp": 12,
+      "fp": 0,
+      "fn": 24
     },
     {
       "frame": 12,
       "ground_truth": 36,
       "predicted": 12,
       "error": -24,
-      "abs_error": 24
+      "abs_error": 24,
+      "tp": 12,
+      "fp": 0,
+      "fn": 24
     },
     {
       "frame": 13,
       "ground_truth": 36,
       "predicted": 12,
       "error": -24,
-      "abs_error": 24
+      "abs_error": 24,
+      "tp": 12,
+      "fp": 0,
+      "fn": 24
     },
     {
       "frame": 14,
       "ground_truth": 36,
       "predicted": 12,
       "error": -24,
-      "abs_error": 24
+      "abs_error": 24,
+      "tp": 12,
+      "fp": 0,
+      "fn": 24
     },
     {
       "frame": 15,
       "ground_truth": 36,
       "predicted": 12,
       "error": -24,
-      "abs_error": 24
+      "abs_error": 24,
+      "tp": 12,
+      "fp": 0,
+      "fn": 24
     },
     {
       "frame": 16,
       "ground_truth": 36,
       "predicted": 12,
       "error": -24,
-      "abs_error": 24
+      "abs_error": 24,
+      "tp": 12,
+      "fp": 0,
+      "fn": 24
     },
     {
       "frame": 17,
       "ground_truth": 37,
       "predicted": 12,
       "error": -25,
-      "abs_error": 25
+      "abs_error": 25,
+      "tp": 11,
+      "fp": 1,
+      "fn": 26
     },
     {
       "frame": 18,
       "ground_truth": 37,
       "predicted": 10,
       "error": -27,
-      "abs_error": 27
+      "abs_error": 27,
+      "tp": 10,
+      "fp": 0,
+      "fn": 27
     },
     {
       "frame": 19,
       "ground_truth": 37,
       "predicted": 11,
       "error": -26,
-      "abs_error": 26
+      "abs_error": 26,
+      "tp": 11,
+      "fp": 0,
+      "fn": 26
     },
     {
       "frame": 20,
       "ground_truth": 37,
       "predicted": 11,
       "error": -26,
-      "abs_error": 26
+      "abs_error": 26,
+      "tp": 11,
+      "fp": 0,
+      "fn": 26
     },
     {
       "frame": 21,
       "ground_truth": 37,
       "predicted": 11,
       "error": -26,
-      "abs_error": 26
+      "abs_error": 26,
+      "tp": 11,
+      "fp": 0,
+      "fn": 26
     },
     {
       "frame": 22,
       "ground_truth": 37,
       "predicted": 11,
       "error": -26,
-      "abs_error": 26
+      "abs_error": 26,
+      "tp": 11,
+      "fp": 0,
+      "fn": 26
     },
     {
       "frame": 23,
       "ground_truth": 37,
       "predicted": 13,
       "error": -24,
-      "abs_error": 24
+      "abs_error": 24,
+      "tp": 13,
+      "fp": 0,
+      "fn": 24
     },
     {
       "frame": 24,
       "ground_truth": 37,
       "predicted": 11,
       "error": -26,
-      "abs_error": 26
+      "abs_error": 26,
+      "tp": 11,
+      "fp": 0,
+      "fn": 26
     },
     {
       "frame": 25,
       "ground_truth": 37,
       "predicted": 11,
       "error": -26,
-      "abs_error": 26
+      "abs_error": 26,
+      "tp": 11,
+      "fp": 0,
+      "fn": 26
     },
     {
       "frame": 26,
       "ground_truth": 37,
       "predicted": 13,
       "error": -24,
-      "abs_error": 24
+      "abs_error": 24,
+      "tp": 12,
+      "fp": 1,
+      "fn": 25
     },
     {
       "frame": 27,
       "ground_truth": 37,
       "predicted": 13,
       "error": -24,
-      "abs_error": 24
+      "abs_error": 24,
+      "tp": 12,
+      "fp": 1,
+      "fn": 25
     },
     {
       "frame": 28,
       "ground_truth": 37,
       "predicted": 12,
       "error": -25,
-      "abs_error": 25
+      "abs_error": 25,
+      "tp": 12,
+      "fp": 0,
+      "fn": 25
     },
     {
       "frame": 29,
       "ground_truth": 37,
       "predicted": 14,
       "error": -23,
-      "abs_error": 23
+      "abs_error": 23,
+      "tp": 13,
+      "fp": 1,
+      "fn": 24
     },
     {
       "frame": 30,
       "ground_truth": 37,
       "predicted": 14,
       "error": -23,
-      "abs_error": 23
+      "abs_error": 23,
+      "tp": 14,
+      "fp": 0,
+      "fn": 23
     },
     {
       "frame": 31,
       "ground_truth": 37,
       "predicted": 15,
       "error": -22,
-      "abs_error": 22
+      "abs_error": 22,
+      "tp": 14,
+      "fp": 1,
+      "fn": 23
     },
     {
       "frame": 32,
       "ground_truth": 37,
       "predicted": 15,
       "error": -22,
-      "abs_error": 22
+      "abs_error": 22,
+      "tp": 14,
+      "fp": 1,
+      "fn": 23
     },
     {
       "frame": 33,
       "ground_truth": 37,
       "predicted": 13,
       "error": -24,
-      "abs_error": 24
+      "abs_error": 24,
+      "tp": 12,
+      "fp": 1,
+      "fn": 25
     },
     {
       "frame": 34,
       "ground_truth": 37,
       "predicted": 14,
       "error": -23,
-      "abs_error": 23
+      "abs_error": 23,
+      "tp": 13,
+      "fp": 1,
+      "fn": 24
     },
     {
       "frame": 35,
       "ground_truth": 37,
       "predicted": 11,
       "error": -26,
-      "abs_error": 26
+      "abs_error": 26,
+      "tp": 11,
+      "fp": 0,
+      "fn": 26
     },
     {
       "frame": 36,
       "ground_truth": 37,
       "predicted": 12,
       "error": -25,
-      "abs_error": 25
+      "abs_error": 25,
+      "tp": 12,
+      "fp": 0,
+      "fn": 25
     },
     {
       "frame": 37,
       "ground_truth": 37,
       "predicted": 11,
       "error": -26,
-      "abs_error": 26
+      "abs_error": 26,
+      "tp": 11,
+      "fp": 0,
+      "fn": 26
     },
     {
       "frame": 38,
       "ground_truth": 37,
       "predicted": 12,
       "error": -25,
-      "abs_error": 25
+      "abs_error": 25,
+      "tp": 12,
+      "fp": 0,
+      "fn": 25
     },
     {
       "frame": 39,
       "ground_truth": 37,
       "predicted": 12,
       "error": -25,
-      "abs_error": 25
+      "abs_error": 25,
+      "tp": 12,
+      "fp": 0,
+      "fn": 25
     },
     {
       "frame": 40,
       "ground_truth": 37,
       "predicted": 12,
       "error": -25,
-      "abs_error": 25
+      "abs_error": 25,
+      "tp": 12,
+      "fp": 0,
+      "fn": 25
     },
     {
       "frame": 41,
       "ground_truth": 37,
       "predicted": 13,
       "error": -24,
-      "abs_error": 24
+      "abs_error": 24,
+      "tp": 13,
+      "fp": 0,
+      "fn": 24
     },
     {
       "frame": 42,
       "ground_truth": 37,
       "predicted": 13,
       "error": -24,
-      "abs_error": 24
+      "abs_error": 24,
+      "tp": 13,
+      "fp": 0,
+      "fn": 24
     },
     {
       "frame": 43,
       "ground_truth": 36,
       "predicted": 12,
       "error": -24,
-      "abs_error": 24
+      "abs_error": 24,
+      "tp": 12,
+      "fp": 0,
+      "fn": 24
     },
     {
       "frame": 44,
       "ground_truth": 36,
       "predicted": 12,
       "error": -24,
-      "abs_error": 24
+      "abs_error": 24,
+      "tp": 12,
+      "fp": 0,
+      "fn": 24
     },
     {
       "frame": 45,
       "ground_truth": 36,
       "predicted": 12,
       "error": -24,
-      "abs_error": 24
+      "abs_error": 24,
+      "tp": 12,
+      "fp": 0,
+      "fn": 24
     },
     {
       "frame": 46,
       "ground_truth": 36,
       "predicted": 13,
       "error": -23,
-      "abs_error": 23
+      "abs_error": 23,
+      "tp": 13,
+      "fp": 0,
+      "fn": 23
     },
     {
       "frame": 47,
       "ground_truth": 37,
       "predicted": 13,
       "error": -24,
-      "abs_error": 24
+      "abs_error": 24,
+      "tp": 13,
+      "fp": 0,
+      "fn": 24
     },
     {
       "frame": 48,
       "ground_truth": 37,
       "predicted": 12,
       "error": -25,
-      "abs_error": 25
+      "abs_error": 25,
+      "tp": 11,
+      "fp": 1,
+      "fn": 26
     },
     {
       "frame": 49,
       "ground_truth": 37,
       "predicted": 12,
       "error": -25,
-      "abs_error": 25
+      "abs_error": 25,
+      "tp": 12,
+      "fp": 0,
+      "fn": 25
     },
     {
       "frame": 50,
       "ground_truth": 37,
       "predicted": 12,
       "error": -25,
-      "abs_error": 25
+      "abs_error": 25,
+      "tp": 12,
+      "fp": 0,
+      "fn": 25
     },
     {
       "frame": 51,
       "ground_truth": 37,
       "predicted": 12,
       "error": -25,
-      "abs_error": 25
+      "abs_error": 25,
+      "tp": 12,
+      "fp": 0,
+      "fn": 25
     },
     {
       "frame": 52,
       "ground_truth": 37,
       "predicted": 12,
       "error": -25,
-      "abs_error": 25
+      "abs_error": 25,
+      "tp": 12,
+      "fp": 0,
+      "fn": 25
     },
     {
       "frame": 53,
       "ground_truth": 37,
       "predicted": 12,
       "error": -25,
-      "abs_error": 25
+      "abs_error": 25,
+      "tp": 12,
+      "fp": 0,
+      "fn": 25
     },
     {
       "frame": 54,
       "ground_truth": 37,
       "predicted": 12,
       "error": -25,
-      "abs_error": 25
+      "abs_error": 25,
+      "tp": 12,
+      "fp": 0,
+      "fn": 25
     },
     {
       "frame": 55,
       "ground_truth": 37,
       "predicted": 15,
       "error": -22,
-      "abs_error": 22
+      "abs_error": 22,
+      "tp": 15,
+      "fp": 0,
+      "fn": 22
     },
     {
       "frame": 56,
       "ground_truth": 37,
       "predicted": 11,
       "error": -26,
-      "abs_error": 26
+      "abs_error": 26,
+      "tp": 11,
+      "fp": 0,
+      "fn": 26
     },
     {
       "frame": 57,
       "ground_truth": 37,
       "predicted": 11,
       "error": -26,
-      "abs_error": 26
+      "abs_error": 26,
+      "tp": 11,
+      "fp": 0,
+      "fn": 26
     },
     {
       "frame": 58,
       "ground_truth": 37,
       "predicted": 11,
       "error": -26,
-      "abs_error": 26
+      "abs_error": 26,
+      "tp": 11,
+      "fp": 0,
+      "fn": 26
     },
     {
       "frame": 59,
       "ground_truth": 37,
       "predicted": 11,
       "error": -26,
-      "abs_error": 26
+      "abs_error": 26,
+      "tp": 11,
+      "fp": 0,
+      "fn": 26
     },
     {
       "frame": 60,
       "ground_truth": 38,
       "predicted": 13,
       "error": -25,
-      "abs_error": 25
+      "abs_error": 25,
+      "tp": 13,
+      "fp": 0,
+      "fn": 25
     },
     {
       "frame": 61,
       "ground_truth": 38,
       "predicted": 14,
       "error": -24,
-      "abs_error": 24
+      "abs_error": 24,
+      "tp": 14,
+      "fp": 0,
+      "fn": 24
     },
     {
       "frame": 62,
       "ground_truth": 38,
       "predicted": 15,
       "error": -23,
-      "abs_error": 23
+      "abs_error": 23,
+      "tp": 15,
+      "fp": 0,
+      "fn": 23
     },
     {
       "frame": 63,
       "ground_truth": 38,
       "predicted": 14,
       "error": -24,
-      "abs_error": 24
+      "abs_error": 24,
+      "tp": 14,
+      "fp": 0,
+      "fn": 24
     },
     {
       "frame": 64,
       "ground_truth": 38,
       "predicted": 11,
       "error": -27,
-      "abs_error": 27
+      "abs_error": 27,
+      "tp": 11,
+      "fp": 0,
+      "fn": 27
     },
     {
       "frame": 65,
       "ground_truth": 38,
       "predicted": 11,
       "error": -27,
-      "abs_error": 27
+      "abs_error": 27,
+      "tp": 11,
+      "fp": 0,
+      "fn": 27
     },
     {
       "frame": 66,
       "ground_truth": 38,
       "predicted": 13,
       "error": -25,
-      "abs_error": 25
+      "abs_error": 25,
+      "tp": 13,
+      "fp": 0,
+      "fn": 25
     },
     {
       "frame": 67,
       "ground_truth": 38,
       "predicted": 13,
       "error": -25,
-      "abs_error": 25
+      "abs_error": 25,
+      "tp": 13,
+      "fp": 0,
+      "fn": 25
     },
     {
       "frame": 68,
       "ground_truth": 38,
       "predicted": 13,
       "error": -25,
-      "abs_error": 25
+      "abs_error": 25,
+      "tp": 13,
+      "fp": 0,
+      "fn": 25
     },
     {
       "frame": 69,
       "ground_truth": 38,
       "predicted": 13,
       "error": -25,
-      "abs_error": 25
+      "abs_error": 25,
+      "tp": 13,
+      "fp": 0,
+      "fn": 25
     },
     {
       "frame": 70,
       "ground_truth": 38,
       "predicted": 12,
       "error": -26,
-      "abs_error": 26
+      "abs_error": 26,
+      "tp": 12,
+      "fp": 0,
+      "fn": 26
     },
     {
       "frame": 71,
       "ground_truth": 38,
       "predicted": 12,
       "error": -26,
-      "abs_error": 26
+      "abs_error": 26,
+      "tp": 12,
+      "fp": 0,
+      "fn": 26
     },
     {
       "frame": 72,
       "ground_truth": 38,
       "predicted": 12,
       "error": -26,
-      "abs_error": 26
+      "abs_error": 26,
+      "tp": 12,
+      "fp": 0,
+      "fn": 26
     },
     {
       "frame": 73,
       "ground_truth": 38,
       "predicted": 11,
       "error": -27,
-      "abs_error": 27
+      "abs_error": 27,
+      "tp": 11,
+      "fp": 0,
+      "fn": 27
     },
     {
       "frame": 74,
       "ground_truth": 38,
       "predicted": 12,
       "error": -26,
-      "abs_error": 26
+      "abs_error": 26,
+      "tp": 12,
+      "fp": 0,
+      "fn": 26
     },
     {
       "frame": 75,
       "ground_truth": 38,
       "predicted": 12,
       "error": -26,
-      "abs_error": 26
+      "abs_error": 26,
+      "tp": 12,
+      "fp": 0,
+      "fn": 26
     },
     {
       "frame": 76,
       "ground_truth": 38,
       "predicted": 11,
       "error": -27,
-      "abs_error": 27
+      "abs_error": 27,
+      "tp": 11,
+      "fp": 0,
+      "fn": 27
     },
     {
       "frame": 77,
       "ground_truth": 38,
       "predicted": 12,
       "error": -26,
-      "abs_error": 26
+      "abs_error": 26,
+      "tp": 12,
+      "fp": 0,
+      "fn": 26
     },
     {
       "frame": 78,
       "ground_truth": 38,
       "predicted": 11,
       "error": -27,
-      "abs_error": 27
+      "abs_error": 27,
+      "tp": 11,
+      "fp": 0,
+      "fn": 27
     },
     {
       "frame": 79,
       "ground_truth": 39,
       "predicted": 12,
       "error": -27,
-      "abs_error": 27
+      "abs_error": 27,
+      "tp": 12,
+      "fp": 0,
+      "fn": 27
     },
     {
       "frame": 80,
       "ground_truth": 39,
       "predicted": 12,
       "error": -27,
-      "abs_error": 27
+      "abs_error": 27,
+      "tp": 12,
+      "fp": 0,
+      "fn": 27
     },
     {
       "frame": 81,
       "ground_truth": 40,
       "predicted": 13,
       "error": -27,
-      "abs_error": 27
+      "abs_error": 27,
+      "tp": 13,
+      "fp": 0,
+      "fn": 27
     },
     {
       "frame": 82,
       "ground_truth": 40,
       "predicted": 12,
       "error": -28,
-      "abs_error": 28
+      "abs_error": 28,
+      "tp": 12,
+      "fp": 0,
+      "fn": 28
     },
     {
       "frame": 83,
       "ground_truth": 40,
       "predicted": 12,
       "error": -28,
-      "abs_error": 28
+      "abs_error": 28,
+      "tp": 12,
+      "fp": 0,
+      "fn": 28
     },
     {
       "frame": 84,
       "ground_truth": 40,
       "predicted": 12,
       "error": -28,
-      "abs_error": 28
+      "abs_error": 28,
+      "tp": 12,
+      "fp": 0,
+      "fn": 28
     },
     {
       "frame": 85,
       "ground_truth": 40,
       "predicted": 11,
       "error": -29,
-      "abs_error": 29
+      "abs_error": 29,
+      "tp": 11,
+      "fp": 0,
+      "fn": 29
     },
     {
       "frame": 86,
       "ground_truth": 41,
       "predicted": 11,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 11,
+      "fp": 0,
+      "fn": 30
     },
     {
       "frame": 87,
       "ground_truth": 41,
       "predicted": 11,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 11,
+      "fp": 0,
+      "fn": 30
     },
     {
       "frame": 88,
       "ground_truth": 41,
       "predicted": 8,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 8,
+      "fp": 0,
+      "fn": 33
     },
     {
       "frame": 89,
       "ground_truth": 41,
       "predicted": 7,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 7,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 90,
       "ground_truth": 41,
       "predicted": 10,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 9,
+      "fp": 1,
+      "fn": 32
     },
     {
       "frame": 91,
       "ground_truth": 41,
       "predicted": 9,
       "error": -32,
-      "abs_error": 32
+      "abs_error": 32,
+      "tp": 8,
+      "fp": 1,
+      "fn": 33
     },
     {
       "frame": 92,
       "ground_truth": 41,
       "predicted": 9,
       "error": -32,
-      "abs_error": 32
+      "abs_error": 32,
+      "tp": 7,
+      "fp": 2,
+      "fn": 34
     },
     {
       "frame": 93,
       "ground_truth": 41,
       "predicted": 10,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 8,
+      "fp": 2,
+      "fn": 33
     },
     {
       "frame": 94,
       "ground_truth": 41,
       "predicted": 10,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 9,
+      "fp": 1,
+      "fn": 32
     },
     {
       "frame": 95,
       "ground_truth": 41,
       "predicted": 10,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 9,
+      "fp": 1,
+      "fn": 32
     },
     {
       "frame": 96,
       "ground_truth": 41,
       "predicted": 10,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 8,
+      "fp": 2,
+      "fn": 33
     },
     {
       "frame": 97,
       "ground_truth": 41,
       "predicted": 10,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 9,
+      "fp": 1,
+      "fn": 32
     },
     {
       "frame": 98,
       "ground_truth": 41,
       "predicted": 11,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 10,
+      "fp": 1,
+      "fn": 31
     },
     {
       "frame": 99,
       "ground_truth": 41,
       "predicted": 11,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 10,
+      "fp": 1,
+      "fn": 31
     },
     {
       "frame": 100,
       "ground_truth": 41,
       "predicted": 11,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 10,
+      "fp": 1,
+      "fn": 31
     },
     {
       "frame": 101,
       "ground_truth": 41,
       "predicted": 13,
       "error": -28,
-      "abs_error": 28
+      "abs_error": 28,
+      "tp": 12,
+      "fp": 1,
+      "fn": 29
     },
     {
       "frame": 102,
       "ground_truth": 41,
       "predicted": 12,
       "error": -29,
-      "abs_error": 29
+      "abs_error": 29,
+      "tp": 11,
+      "fp": 1,
+      "fn": 30
     },
     {
       "frame": 103,
       "ground_truth": 41,
       "predicted": 11,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 10,
+      "fp": 1,
+      "fn": 31
     },
     {
       "frame": 104,
       "ground_truth": 41,
       "predicted": 12,
       "error": -29,
-      "abs_error": 29
+      "abs_error": 29,
+      "tp": 12,
+      "fp": 0,
+      "fn": 29
     },
     {
       "frame": 105,
       "ground_truth": 41,
       "predicted": 11,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 11,
+      "fp": 0,
+      "fn": 30
     },
     {
       "frame": 106,
       "ground_truth": 41,
       "predicted": 12,
       "error": -29,
-      "abs_error": 29
+      "abs_error": 29,
+      "tp": 12,
+      "fp": 0,
+      "fn": 29
     },
     {
       "frame": 107,
       "ground_truth": 41,
       "predicted": 11,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 11,
+      "fp": 0,
+      "fn": 30
     },
     {
       "frame": 108,
       "ground_truth": 41,
       "predicted": 11,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 11,
+      "fp": 0,
+      "fn": 30
     },
     {
       "frame": 109,
       "ground_truth": 41,
       "predicted": 10,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 10,
+      "fp": 0,
+      "fn": 31
     },
     {
       "frame": 110,
       "ground_truth": 41,
       "predicted": 11,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 11,
+      "fp": 0,
+      "fn": 30
     },
     {
       "frame": 111,
       "ground_truth": 41,
       "predicted": 10,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 10,
+      "fp": 0,
+      "fn": 31
     },
     {
       "frame": 112,
       "ground_truth": 41,
       "predicted": 11,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 11,
+      "fp": 0,
+      "fn": 30
     },
     {
       "frame": 113,
       "ground_truth": 41,
       "predicted": 12,
       "error": -29,
-      "abs_error": 29
+      "abs_error": 29,
+      "tp": 12,
+      "fp": 0,
+      "fn": 29
     },
     {
       "frame": 114,
       "ground_truth": 41,
       "predicted": 9,
       "error": -32,
-      "abs_error": 32
+      "abs_error": 32,
+      "tp": 9,
+      "fp": 0,
+      "fn": 32
     },
     {
       "frame": 115,
       "ground_truth": 41,
       "predicted": 9,
       "error": -32,
-      "abs_error": 32
+      "abs_error": 32,
+      "tp": 9,
+      "fp": 0,
+      "fn": 32
     },
     {
       "frame": 116,
       "ground_truth": 41,
       "predicted": 10,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 10,
+      "fp": 0,
+      "fn": 31
     },
     {
       "frame": 117,
       "ground_truth": 41,
       "predicted": 12,
       "error": -29,
-      "abs_error": 29
+      "abs_error": 29,
+      "tp": 12,
+      "fp": 0,
+      "fn": 29
     },
     {
       "frame": 118,
       "ground_truth": 41,
       "predicted": 13,
       "error": -28,
-      "abs_error": 28
+      "abs_error": 28,
+      "tp": 13,
+      "fp": 0,
+      "fn": 28
     },
     {
       "frame": 119,
       "ground_truth": 41,
       "predicted": 12,
       "error": -29,
-      "abs_error": 29
+      "abs_error": 29,
+      "tp": 12,
+      "fp": 0,
+      "fn": 29
     },
     {
       "frame": 120,
       "ground_truth": 41,
       "predicted": 11,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 11,
+      "fp": 0,
+      "fn": 30
     },
     {
       "frame": 121,
       "ground_truth": 41,
       "predicted": 11,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 11,
+      "fp": 0,
+      "fn": 30
     },
     {
       "frame": 122,
       "ground_truth": 41,
       "predicted": 11,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 10,
+      "fp": 1,
+      "fn": 31
     },
     {
       "frame": 123,
       "ground_truth": 42,
       "predicted": 11,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 11,
+      "fp": 0,
+      "fn": 31
     },
     {
       "frame": 124,
       "ground_truth": 42,
       "predicted": 11,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 11,
+      "fp": 0,
+      "fn": 31
     },
     {
       "frame": 125,
       "ground_truth": 42,
       "predicted": 11,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 11,
+      "fp": 0,
+      "fn": 31
     },
     {
       "frame": 126,
       "ground_truth": 42,
       "predicted": 11,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 11,
+      "fp": 0,
+      "fn": 31
     },
     {
       "frame": 127,
       "ground_truth": 42,
       "predicted": 10,
       "error": -32,
-      "abs_error": 32
+      "abs_error": 32,
+      "tp": 10,
+      "fp": 0,
+      "fn": 32
     },
     {
       "frame": 128,
       "ground_truth": 42,
       "predicted": 11,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 10,
+      "fp": 1,
+      "fn": 32
     },
     {
       "frame": 129,
       "ground_truth": 42,
       "predicted": 12,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 12,
+      "fp": 0,
+      "fn": 30
     },
     {
       "frame": 130,
       "ground_truth": 42,
       "predicted": 15,
       "error": -27,
-      "abs_error": 27
+      "abs_error": 27,
+      "tp": 14,
+      "fp": 1,
+      "fn": 28
     },
     {
       "frame": 131,
       "ground_truth": 42,
       "predicted": 14,
       "error": -28,
-      "abs_error": 28
+      "abs_error": 28,
+      "tp": 14,
+      "fp": 0,
+      "fn": 28
     },
     {
       "frame": 132,
       "ground_truth": 42,
       "predicted": 11,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 11,
+      "fp": 0,
+      "fn": 31
     },
     {
       "frame": 133,
       "ground_truth": 42,
       "predicted": 13,
       "error": -29,
-      "abs_error": 29
+      "abs_error": 29,
+      "tp": 13,
+      "fp": 0,
+      "fn": 29
     },
     {
       "frame": 134,
       "ground_truth": 42,
       "predicted": 11,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 11,
+      "fp": 0,
+      "fn": 31
     },
     {
       "frame": 135,
       "ground_truth": 42,
       "predicted": 12,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 12,
+      "fp": 0,
+      "fn": 30
     },
     {
       "frame": 136,
       "ground_truth": 42,
       "predicted": 13,
       "error": -29,
-      "abs_error": 29
+      "abs_error": 29,
+      "tp": 13,
+      "fp": 0,
+      "fn": 29
     },
     {
       "frame": 137,
       "ground_truth": 42,
       "predicted": 13,
       "error": -29,
-      "abs_error": 29
+      "abs_error": 29,
+      "tp": 13,
+      "fp": 0,
+      "fn": 29
     },
     {
       "frame": 138,
       "ground_truth": 42,
       "predicted": 12,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 12,
+      "fp": 0,
+      "fn": 30
     },
     {
       "frame": 139,
       "ground_truth": 42,
       "predicted": 14,
       "error": -28,
-      "abs_error": 28
+      "abs_error": 28,
+      "tp": 14,
+      "fp": 0,
+      "fn": 28
     },
     {
       "frame": 140,
       "ground_truth": 42,
       "predicted": 14,
       "error": -28,
-      "abs_error": 28
+      "abs_error": 28,
+      "tp": 14,
+      "fp": 0,
+      "fn": 28
     },
     {
       "frame": 141,
       "ground_truth": 42,
       "predicted": 15,
       "error": -27,
-      "abs_error": 27
+      "abs_error": 27,
+      "tp": 15,
+      "fp": 0,
+      "fn": 27
     },
     {
       "frame": 142,
       "ground_truth": 42,
       "predicted": 15,
       "error": -27,
-      "abs_error": 27
+      "abs_error": 27,
+      "tp": 15,
+      "fp": 0,
+      "fn": 27
     },
     {
       "frame": 143,
       "ground_truth": 42,
       "predicted": 16,
       "error": -26,
-      "abs_error": 26
+      "abs_error": 26,
+      "tp": 16,
+      "fp": 0,
+      "fn": 26
     },
     {
       "frame": 144,
       "ground_truth": 42,
       "predicted": 15,
       "error": -27,
-      "abs_error": 27
+      "abs_error": 27,
+      "tp": 15,
+      "fp": 0,
+      "fn": 27
     },
     {
       "frame": 145,
       "ground_truth": 43,
       "predicted": 12,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 12,
+      "fp": 0,
+      "fn": 31
     },
     {
       "frame": 146,
       "ground_truth": 43,
       "predicted": 15,
       "error": -28,
-      "abs_error": 28
+      "abs_error": 28,
+      "tp": 15,
+      "fp": 0,
+      "fn": 28
     },
     {
       "frame": 147,
       "ground_truth": 43,
       "predicted": 16,
       "error": -27,
-      "abs_error": 27
+      "abs_error": 27,
+      "tp": 16,
+      "fp": 0,
+      "fn": 27
     },
     {
       "frame": 148,
       "ground_truth": 43,
       "predicted": 16,
       "error": -27,
-      "abs_error": 27
+      "abs_error": 27,
+      "tp": 16,
+      "fp": 0,
+      "fn": 27
     },
     {
       "frame": 149,
       "ground_truth": 43,
       "predicted": 15,
       "error": -28,
-      "abs_error": 28
+      "abs_error": 28,
+      "tp": 15,
+      "fp": 0,
+      "fn": 28
     },
     {
       "frame": 150,
       "ground_truth": 44,
       "predicted": 16,
       "error": -28,
-      "abs_error": 28
+      "abs_error": 28,
+      "tp": 16,
+      "fp": 0,
+      "fn": 28
     },
     {
       "frame": 151,
       "ground_truth": 45,
       "predicted": 14,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 14,
+      "fp": 0,
+      "fn": 31
     },
     {
       "frame": 152,
       "ground_truth": 46,
       "predicted": 14,
       "error": -32,
-      "abs_error": 32
+      "abs_error": 32,
+      "tp": 14,
+      "fp": 0,
+      "fn": 32
     },
     {
       "frame": 153,
       "ground_truth": 46,
       "predicted": 12,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 12,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 154,
       "ground_truth": 46,
       "predicted": 13,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 13,
+      "fp": 0,
+      "fn": 33
     },
     {
       "frame": 155,
       "ground_truth": 46,
       "predicted": 15,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 15,
+      "fp": 0,
+      "fn": 31
     },
     {
       "frame": 156,
       "ground_truth": 46,
       "predicted": 17,
       "error": -29,
-      "abs_error": 29
+      "abs_error": 29,
+      "tp": 17,
+      "fp": 0,
+      "fn": 29
     },
     {
       "frame": 157,
       "ground_truth": 46,
       "predicted": 16,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 16,
+      "fp": 0,
+      "fn": 30
     },
     {
       "frame": 158,
       "ground_truth": 46,
       "predicted": 17,
       "error": -29,
-      "abs_error": 29
+      "abs_error": 29,
+      "tp": 16,
+      "fp": 1,
+      "fn": 30
     },
     {
       "frame": 159,
       "ground_truth": 46,
       "predicted": 16,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 15,
+      "fp": 1,
+      "fn": 31
     },
     {
       "frame": 160,
       "ground_truth": 46,
       "predicted": 16,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 16,
+      "fp": 0,
+      "fn": 30
     },
     {
       "frame": 161,
       "ground_truth": 46,
       "predicted": 17,
       "error": -29,
-      "abs_error": 29
+      "abs_error": 29,
+      "tp": 16,
+      "fp": 1,
+      "fn": 30
     },
     {
       "frame": 162,
       "ground_truth": 47,
       "predicted": 16,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 16,
+      "fp": 0,
+      "fn": 31
     },
     {
       "frame": 163,
       "ground_truth": 47,
       "predicted": 16,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 16,
+      "fp": 0,
+      "fn": 31
     },
     {
       "frame": 164,
       "ground_truth": 47,
       "predicted": 17,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 16,
+      "fp": 1,
+      "fn": 31
     },
     {
       "frame": 165,
       "ground_truth": 47,
       "predicted": 17,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 16,
+      "fp": 1,
+      "fn": 31
     },
     {
       "frame": 166,
       "ground_truth": 48,
       "predicted": 16,
       "error": -32,
-      "abs_error": 32
+      "abs_error": 32,
+      "tp": 16,
+      "fp": 0,
+      "fn": 32
     },
     {
       "frame": 167,
       "ground_truth": 48,
       "predicted": 16,
       "error": -32,
-      "abs_error": 32
+      "abs_error": 32,
+      "tp": 16,
+      "fp": 0,
+      "fn": 32
     },
     {
       "frame": 168,
       "ground_truth": 48,
       "predicted": 15,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 15,
+      "fp": 0,
+      "fn": 33
     },
     {
       "frame": 169,
       "ground_truth": 48,
       "predicted": 15,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 15,
+      "fp": 0,
+      "fn": 33
     },
     {
       "frame": 170,
       "ground_truth": 48,
       "predicted": 15,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 15,
+      "fp": 0,
+      "fn": 33
     },
     {
       "frame": 171,
       "ground_truth": 48,
       "predicted": 14,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 14,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 172,
       "ground_truth": 48,
       "predicted": 13,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 13,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 173,
       "ground_truth": 49,
       "predicted": 12,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 12,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 174,
       "ground_truth": 49,
       "predicted": 13,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 13,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 175,
       "ground_truth": 49,
       "predicted": 12,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 12,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 176,
       "ground_truth": 49,
       "predicted": 15,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 14,
+      "fp": 1,
+      "fn": 35
     },
     {
       "frame": 177,
       "ground_truth": 49,
       "predicted": 14,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 13,
+      "fp": 1,
+      "fn": 36
     },
     {
       "frame": 178,
       "ground_truth": 49,
       "predicted": 15,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 15,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 179,
       "ground_truth": 49,
       "predicted": 13,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 12,
+      "fp": 1,
+      "fn": 37
     },
     {
       "frame": 180,
       "ground_truth": 49,
       "predicted": 13,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 13,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 181,
       "ground_truth": 50,
       "predicted": 15,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 15,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 182,
       "ground_truth": 50,
       "predicted": 15,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 15,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 183,
       "ground_truth": 50,
       "predicted": 13,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 13,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 184,
       "ground_truth": 50,
       "predicted": 12,
       "error": -38,
-      "abs_error": 38
+      "abs_error": 38,
+      "tp": 12,
+      "fp": 0,
+      "fn": 38
     },
     {
       "frame": 185,
       "ground_truth": 49,
       "predicted": 13,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 13,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 186,
       "ground_truth": 49,
       "predicted": 11,
       "error": -38,
-      "abs_error": 38
+      "abs_error": 38,
+      "tp": 11,
+      "fp": 0,
+      "fn": 38
     },
     {
       "frame": 187,
       "ground_truth": 49,
       "predicted": 14,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 14,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 188,
       "ground_truth": 49,
       "predicted": 15,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 15,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 189,
       "ground_truth": 49,
       "predicted": 15,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 15,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 190,
       "ground_truth": 51,
       "predicted": 14,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 14,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 191,
       "ground_truth": 51,
       "predicted": 13,
       "error": -38,
-      "abs_error": 38
+      "abs_error": 38,
+      "tp": 12,
+      "fp": 1,
+      "fn": 39
     },
     {
       "frame": 192,
       "ground_truth": 51,
       "predicted": 12,
       "error": -39,
-      "abs_error": 39
+      "abs_error": 39,
+      "tp": 12,
+      "fp": 0,
+      "fn": 39
     },
     {
       "frame": 193,
       "ground_truth": 51,
       "predicted": 13,
       "error": -38,
-      "abs_error": 38
+      "abs_error": 38,
+      "tp": 13,
+      "fp": 0,
+      "fn": 38
     },
     {
       "frame": 194,
       "ground_truth": 51,
       "predicted": 14,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 14,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 195,
       "ground_truth": 51,
       "predicted": 13,
       "error": -38,
-      "abs_error": 38
+      "abs_error": 38,
+      "tp": 13,
+      "fp": 0,
+      "fn": 38
     },
     {
       "frame": 196,
       "ground_truth": 51,
       "predicted": 12,
       "error": -39,
-      "abs_error": 39
+      "abs_error": 39,
+      "tp": 12,
+      "fp": 0,
+      "fn": 39
     },
     {
       "frame": 197,
       "ground_truth": 51,
       "predicted": 12,
       "error": -39,
-      "abs_error": 39
+      "abs_error": 39,
+      "tp": 12,
+      "fp": 0,
+      "fn": 39
     },
     {
       "frame": 198,
       "ground_truth": 51,
       "predicted": 15,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 15,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 199,
       "ground_truth": 51,
       "predicted": 11,
       "error": -40,
-      "abs_error": 40
+      "abs_error": 40,
+      "tp": 11,
+      "fp": 0,
+      "fn": 40
     },
     {
       "frame": 200,
       "ground_truth": 51,
       "predicted": 14,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 14,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 201,
       "ground_truth": 51,
       "predicted": 14,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 14,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 202,
       "ground_truth": 51,
       "predicted": 16,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 15,
+      "fp": 1,
+      "fn": 36
     },
     {
       "frame": 203,
       "ground_truth": 52,
       "predicted": 17,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 17,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 204,
       "ground_truth": 52,
       "predicted": 17,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 16,
+      "fp": 1,
+      "fn": 36
     },
     {
       "frame": 205,
       "ground_truth": 52,
       "predicted": 15,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 14,
+      "fp": 1,
+      "fn": 38
     },
     {
       "frame": 206,
       "ground_truth": 52,
       "predicted": 16,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 16,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 207,
       "ground_truth": 52,
       "predicted": 16,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 16,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 208,
       "ground_truth": 51,
       "predicted": 13,
       "error": -38,
-      "abs_error": 38
+      "abs_error": 38,
+      "tp": 13,
+      "fp": 0,
+      "fn": 38
     },
     {
       "frame": 209,
       "ground_truth": 51,
       "predicted": 14,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 14,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 210,
       "ground_truth": 51,
       "predicted": 14,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 14,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 211,
       "ground_truth": 51,
       "predicted": 17,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 17,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 212,
       "ground_truth": 51,
       "predicted": 16,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 16,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 213,
       "ground_truth": 51,
       "predicted": 16,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 16,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 214,
       "ground_truth": 51,
       "predicted": 18,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 17,
+      "fp": 1,
+      "fn": 34
     },
     {
       "frame": 215,
       "ground_truth": 51,
       "predicted": 17,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 17,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 216,
       "ground_truth": 51,
       "predicted": 16,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 16,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 217,
       "ground_truth": 51,
       "predicted": 17,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 16,
+      "fp": 1,
+      "fn": 35
     },
     {
       "frame": 218,
       "ground_truth": 51,
       "predicted": 16,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 16,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 219,
       "ground_truth": 51,
       "predicted": 17,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 17,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 220,
       "ground_truth": 50,
       "predicted": 17,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 16,
+      "fp": 1,
+      "fn": 34
     },
     {
       "frame": 221,
       "ground_truth": 51,
       "predicted": 13,
       "error": -38,
-      "abs_error": 38
+      "abs_error": 38,
+      "tp": 13,
+      "fp": 0,
+      "fn": 38
     },
     {
       "frame": 222,
       "ground_truth": 51,
       "predicted": 15,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 15,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 223,
       "ground_truth": 51,
       "predicted": 16,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 16,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 224,
       "ground_truth": 51,
       "predicted": 16,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 16,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 225,
       "ground_truth": 51,
       "predicted": 16,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 15,
+      "fp": 1,
+      "fn": 36
     },
     {
       "frame": 226,
       "ground_truth": 51,
       "predicted": 14,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 14,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 227,
       "ground_truth": 52,
       "predicted": 15,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 14,
+      "fp": 1,
+      "fn": 38
     },
     {
       "frame": 228,
       "ground_truth": 52,
       "predicted": 16,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 15,
+      "fp": 1,
+      "fn": 37
     },
     {
       "frame": 229,
       "ground_truth": 52,
       "predicted": 14,
       "error": -38,
-      "abs_error": 38
+      "abs_error": 38,
+      "tp": 14,
+      "fp": 0,
+      "fn": 38
     },
     {
       "frame": 230,
       "ground_truth": 52,
       "predicted": 14,
       "error": -38,
-      "abs_error": 38
+      "abs_error": 38,
+      "tp": 14,
+      "fp": 0,
+      "fn": 38
     },
     {
       "frame": 231,
       "ground_truth": 52,
       "predicted": 13,
       "error": -39,
-      "abs_error": 39
+      "abs_error": 39,
+      "tp": 13,
+      "fp": 0,
+      "fn": 39
     },
     {
       "frame": 232,
       "ground_truth": 53,
       "predicted": 10,
       "error": -43,
-      "abs_error": 43
+      "abs_error": 43,
+      "tp": 10,
+      "fp": 0,
+      "fn": 43
     },
     {
       "frame": 233,
       "ground_truth": 53,
       "predicted": 12,
       "error": -41,
-      "abs_error": 41
+      "abs_error": 41,
+      "tp": 12,
+      "fp": 0,
+      "fn": 41
     },
     {
       "frame": 234,
       "ground_truth": 52,
       "predicted": 11,
       "error": -41,
-      "abs_error": 41
+      "abs_error": 41,
+      "tp": 11,
+      "fp": 0,
+      "fn": 41
     },
     {
       "frame": 235,
       "ground_truth": 52,
       "predicted": 12,
       "error": -40,
-      "abs_error": 40
+      "abs_error": 40,
+      "tp": 11,
+      "fp": 1,
+      "fn": 41
     },
     {
       "frame": 236,
       "ground_truth": 53,
       "predicted": 12,
       "error": -41,
-      "abs_error": 41
+      "abs_error": 41,
+      "tp": 11,
+      "fp": 1,
+      "fn": 42
     },
     {
       "frame": 237,
       "ground_truth": 53,
       "predicted": 11,
       "error": -42,
-      "abs_error": 42
+      "abs_error": 42,
+      "tp": 10,
+      "fp": 1,
+      "fn": 43
     },
     {
       "frame": 238,
       "ground_truth": 53,
       "predicted": 12,
       "error": -41,
-      "abs_error": 41
+      "abs_error": 41,
+      "tp": 10,
+      "fp": 2,
+      "fn": 43
     },
     {
       "frame": 239,
       "ground_truth": 53,
       "predicted": 11,
       "error": -42,
-      "abs_error": 42
+      "abs_error": 42,
+      "tp": 10,
+      "fp": 1,
+      "fn": 43
     },
     {
       "frame": 240,
       "ground_truth": 52,
       "predicted": 9,
       "error": -43,
-      "abs_error": 43
+      "abs_error": 43,
+      "tp": 9,
+      "fp": 0,
+      "fn": 43
     },
     {
       "frame": 241,
       "ground_truth": 52,
       "predicted": 11,
       "error": -41,
-      "abs_error": 41
+      "abs_error": 41,
+      "tp": 11,
+      "fp": 0,
+      "fn": 41
     },
     {
       "frame": 242,
       "ground_truth": 52,
       "predicted": 13,
       "error": -39,
-      "abs_error": 39
+      "abs_error": 39,
+      "tp": 11,
+      "fp": 2,
+      "fn": 41
     },
     {
       "frame": 243,
       "ground_truth": 52,
       "predicted": 14,
       "error": -38,
-      "abs_error": 38
+      "abs_error": 38,
+      "tp": 12,
+      "fp": 2,
+      "fn": 40
     },
     {
       "frame": 244,
       "ground_truth": 53,
       "predicted": 11,
       "error": -42,
-      "abs_error": 42
+      "abs_error": 42,
+      "tp": 11,
+      "fp": 0,
+      "fn": 42
     },
     {
       "frame": 245,
       "ground_truth": 53,
       "predicted": 12,
       "error": -41,
-      "abs_error": 41
+      "abs_error": 41,
+      "tp": 12,
+      "fp": 0,
+      "fn": 41
     },
     {
       "frame": 246,
       "ground_truth": 53,
       "predicted": 10,
       "error": -43,
-      "abs_error": 43
+      "abs_error": 43,
+      "tp": 10,
+      "fp": 0,
+      "fn": 43
     },
     {
       "frame": 247,
       "ground_truth": 53,
       "predicted": 11,
       "error": -42,
-      "abs_error": 42
+      "abs_error": 42,
+      "tp": 10,
+      "fp": 1,
+      "fn": 43
     },
     {
       "frame": 248,
       "ground_truth": 53,
       "predicted": 9,
       "error": -44,
-      "abs_error": 44
+      "abs_error": 44,
+      "tp": 9,
+      "fp": 0,
+      "fn": 44
     },
     {
       "frame": 249,
       "ground_truth": 53,
       "predicted": 12,
       "error": -41,
-      "abs_error": 41
+      "abs_error": 41,
+      "tp": 12,
+      "fp": 0,
+      "fn": 41
     },
     {
       "frame": 250,
       "ground_truth": 51,
       "predicted": 15,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 15,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 251,
       "ground_truth": 51,
       "predicted": 15,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 14,
+      "fp": 1,
+      "fn": 37
     },
     {
       "frame": 252,
       "ground_truth": 51,
       "predicted": 16,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 16,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 253,
       "ground_truth": 51,
       "predicted": 13,
       "error": -38,
-      "abs_error": 38
+      "abs_error": 38,
+      "tp": 13,
+      "fp": 0,
+      "fn": 38
     },
     {
       "frame": 254,
       "ground_truth": 51,
       "predicted": 15,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 15,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 255,
       "ground_truth": 51,
       "predicted": 15,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 15,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 256,
       "ground_truth": 51,
       "predicted": 16,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 16,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 257,
       "ground_truth": 51,
       "predicted": 16,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 16,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 258,
       "ground_truth": 51,
       "predicted": 15,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 15,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 259,
       "ground_truth": 51,
       "predicted": 17,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 17,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 260,
       "ground_truth": 51,
       "predicted": 15,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 15,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 261,
       "ground_truth": 51,
       "predicted": 17,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 17,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 262,
       "ground_truth": 51,
       "predicted": 17,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 17,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 263,
       "ground_truth": 50,
       "predicted": 16,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 16,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 264,
       "ground_truth": 50,
       "predicted": 17,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 17,
+      "fp": 0,
+      "fn": 33
     },
     {
       "frame": 265,
       "ground_truth": 51,
       "predicted": 13,
       "error": -38,
-      "abs_error": 38
+      "abs_error": 38,
+      "tp": 13,
+      "fp": 0,
+      "fn": 38
     },
     {
       "frame": 266,
       "ground_truth": 51,
       "predicted": 14,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 14,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 267,
       "ground_truth": 51,
       "predicted": 16,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 16,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 268,
       "ground_truth": 51,
       "predicted": 14,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 14,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 269,
       "ground_truth": 51,
       "predicted": 18,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 17,
+      "fp": 1,
+      "fn": 34
     },
     {
       "frame": 270,
       "ground_truth": 51,
       "predicted": 19,
       "error": -32,
-      "abs_error": 32
+      "abs_error": 32,
+      "tp": 18,
+      "fp": 1,
+      "fn": 33
     },
     {
       "frame": 271,
       "ground_truth": 51,
       "predicted": 20,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 20,
+      "fp": 0,
+      "fn": 31
     },
     {
       "frame": 272,
       "ground_truth": 51,
       "predicted": 18,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 18,
+      "fp": 0,
+      "fn": 33
     },
     {
       "frame": 273,
       "ground_truth": 51,
       "predicted": 17,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 17,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 274,
       "ground_truth": 51,
       "predicted": 18,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 18,
+      "fp": 0,
+      "fn": 33
     },
     {
       "frame": 275,
       "ground_truth": 52,
       "predicted": 18,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 18,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 276,
       "ground_truth": 52,
       "predicted": 19,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 18,
+      "fp": 1,
+      "fn": 34
     },
     {
       "frame": 277,
       "ground_truth": 52,
       "predicted": 17,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 17,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 278,
       "ground_truth": 52,
       "predicted": 18,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 18,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 279,
       "ground_truth": 52,
       "predicted": 18,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 18,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 280,
       "ground_truth": 52,
       "predicted": 17,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 17,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 281,
       "ground_truth": 52,
       "predicted": 18,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 18,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 282,
       "ground_truth": 50,
       "predicted": 18,
       "error": -32,
-      "abs_error": 32
+      "abs_error": 32,
+      "tp": 18,
+      "fp": 0,
+      "fn": 32
     },
     {
       "frame": 283,
       "ground_truth": 50,
       "predicted": 17,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 17,
+      "fp": 0,
+      "fn": 33
     },
     {
       "frame": 284,
       "ground_truth": 50,
       "predicted": 20,
       "error": -30,
-      "abs_error": 30
+      "abs_error": 30,
+      "tp": 20,
+      "fp": 0,
+      "fn": 30
     },
     {
       "frame": 285,
       "ground_truth": 50,
       "predicted": 19,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 19,
+      "fp": 0,
+      "fn": 31
     },
     {
       "frame": 286,
       "ground_truth": 50,
       "predicted": 19,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 19,
+      "fp": 0,
+      "fn": 31
     },
     {
       "frame": 287,
       "ground_truth": 50,
       "predicted": 18,
       "error": -32,
-      "abs_error": 32
+      "abs_error": 32,
+      "tp": 18,
+      "fp": 0,
+      "fn": 32
     },
     {
       "frame": 288,
       "ground_truth": 51,
       "predicted": 17,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 17,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 289,
       "ground_truth": 51,
       "predicted": 17,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 17,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 290,
       "ground_truth": 50,
       "predicted": 17,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 16,
+      "fp": 1,
+      "fn": 34
     },
     {
       "frame": 291,
       "ground_truth": 50,
       "predicted": 17,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 16,
+      "fp": 1,
+      "fn": 34
     },
     {
       "frame": 292,
       "ground_truth": 50,
       "predicted": 13,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 13,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 293,
       "ground_truth": 50,
       "predicted": 16,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 15,
+      "fp": 1,
+      "fn": 35
     },
     {
       "frame": 294,
       "ground_truth": 50,
       "predicted": 16,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 15,
+      "fp": 1,
+      "fn": 35
     },
     {
       "frame": 295,
       "ground_truth": 50,
       "predicted": 17,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 16,
+      "fp": 1,
+      "fn": 34
     },
     {
       "frame": 296,
       "ground_truth": 50,
       "predicted": 19,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 18,
+      "fp": 1,
+      "fn": 32
     },
     {
       "frame": 297,
       "ground_truth": 50,
       "predicted": 18,
       "error": -32,
-      "abs_error": 32
+      "abs_error": 32,
+      "tp": 17,
+      "fp": 1,
+      "fn": 33
     },
     {
       "frame": 298,
       "ground_truth": 50,
       "predicted": 18,
       "error": -32,
-      "abs_error": 32
+      "abs_error": 32,
+      "tp": 17,
+      "fp": 1,
+      "fn": 33
     },
     {
       "frame": 299,
       "ground_truth": 50,
       "predicted": 19,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 19,
+      "fp": 0,
+      "fn": 31
     },
     {
       "frame": 300,
       "ground_truth": 50,
       "predicted": 19,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 19,
+      "fp": 0,
+      "fn": 31
     },
     {
       "frame": 301,
       "ground_truth": 50,
       "predicted": 18,
       "error": -32,
-      "abs_error": 32
+      "abs_error": 32,
+      "tp": 18,
+      "fp": 0,
+      "fn": 32
     },
     {
       "frame": 302,
       "ground_truth": 51,
       "predicted": 18,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 18,
+      "fp": 0,
+      "fn": 33
     },
     {
       "frame": 303,
       "ground_truth": 51,
       "predicted": 18,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 18,
+      "fp": 0,
+      "fn": 33
     },
     {
       "frame": 304,
       "ground_truth": 51,
       "predicted": 19,
       "error": -32,
-      "abs_error": 32
+      "abs_error": 32,
+      "tp": 19,
+      "fp": 0,
+      "fn": 32
     },
     {
       "frame": 305,
       "ground_truth": 51,
       "predicted": 18,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 18,
+      "fp": 0,
+      "fn": 33
     },
     {
       "frame": 306,
       "ground_truth": 51,
       "predicted": 15,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 15,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 307,
       "ground_truth": 51,
       "predicted": 16,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 16,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 308,
       "ground_truth": 51,
       "predicted": 15,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 15,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 309,
       "ground_truth": 51,
       "predicted": 17,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 17,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 310,
       "ground_truth": 52,
       "predicted": 17,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 16,
+      "fp": 1,
+      "fn": 36
     },
     {
       "frame": 311,
       "ground_truth": 52,
       "predicted": 17,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 17,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 312,
       "ground_truth": 52,
       "predicted": 15,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 14,
+      "fp": 1,
+      "fn": 38
     },
     {
       "frame": 313,
       "ground_truth": 52,
       "predicted": 16,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 16,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 314,
       "ground_truth": 53,
       "predicted": 18,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 17,
+      "fp": 1,
+      "fn": 36
     },
     {
       "frame": 315,
       "ground_truth": 53,
       "predicted": 20,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 19,
+      "fp": 1,
+      "fn": 34
     },
     {
       "frame": 316,
       "ground_truth": 53,
       "predicted": 18,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 18,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 317,
       "ground_truth": 53,
       "predicted": 16,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 16,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 318,
       "ground_truth": 53,
       "predicted": 16,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 16,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 319,
       "ground_truth": 53,
       "predicted": 17,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 17,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 320,
       "ground_truth": 53,
       "predicted": 16,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 16,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 321,
       "ground_truth": 53,
       "predicted": 16,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 16,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 322,
       "ground_truth": 53,
       "predicted": 15,
       "error": -38,
-      "abs_error": 38
+      "abs_error": 38,
+      "tp": 15,
+      "fp": 0,
+      "fn": 38
     },
     {
       "frame": 323,
       "ground_truth": 53,
       "predicted": 14,
       "error": -39,
-      "abs_error": 39
+      "abs_error": 39,
+      "tp": 14,
+      "fp": 0,
+      "fn": 39
     },
     {
       "frame": 324,
       "ground_truth": 54,
       "predicted": 14,
       "error": -40,
-      "abs_error": 40
+      "abs_error": 40,
+      "tp": 14,
+      "fp": 0,
+      "fn": 40
     },
     {
       "frame": 325,
       "ground_truth": 54,
       "predicted": 15,
       "error": -39,
-      "abs_error": 39
+      "abs_error": 39,
+      "tp": 15,
+      "fp": 0,
+      "fn": 39
     },
     {
       "frame": 326,
       "ground_truth": 54,
       "predicted": 15,
       "error": -39,
-      "abs_error": 39
+      "abs_error": 39,
+      "tp": 15,
+      "fp": 0,
+      "fn": 39
     },
     {
       "frame": 327,
       "ground_truth": 54,
       "predicted": 16,
       "error": -38,
-      "abs_error": 38
+      "abs_error": 38,
+      "tp": 16,
+      "fp": 0,
+      "fn": 38
     },
     {
       "frame": 328,
       "ground_truth": 54,
       "predicted": 15,
       "error": -39,
-      "abs_error": 39
+      "abs_error": 39,
+      "tp": 15,
+      "fp": 0,
+      "fn": 39
     },
     {
       "frame": 329,
       "ground_truth": 54,
       "predicted": 15,
       "error": -39,
-      "abs_error": 39
+      "abs_error": 39,
+      "tp": 15,
+      "fp": 0,
+      "fn": 39
     },
     {
       "frame": 330,
       "ground_truth": 55,
       "predicted": 15,
       "error": -40,
-      "abs_error": 40
+      "abs_error": 40,
+      "tp": 15,
+      "fp": 0,
+      "fn": 40
     },
     {
       "frame": 331,
       "ground_truth": 55,
       "predicted": 14,
       "error": -41,
-      "abs_error": 41
+      "abs_error": 41,
+      "tp": 14,
+      "fp": 0,
+      "fn": 41
     },
     {
       "frame": 332,
       "ground_truth": 54,
       "predicted": 14,
       "error": -40,
-      "abs_error": 40
+      "abs_error": 40,
+      "tp": 14,
+      "fp": 0,
+      "fn": 40
     },
     {
       "frame": 333,
       "ground_truth": 53,
       "predicted": 14,
       "error": -39,
-      "abs_error": 39
+      "abs_error": 39,
+      "tp": 13,
+      "fp": 1,
+      "fn": 40
     },
     {
       "frame": 334,
       "ground_truth": 53,
       "predicted": 14,
       "error": -39,
-      "abs_error": 39
+      "abs_error": 39,
+      "tp": 13,
+      "fp": 1,
+      "fn": 40
     },
     {
       "frame": 335,
       "ground_truth": 53,
       "predicted": 15,
       "error": -38,
-      "abs_error": 38
+      "abs_error": 38,
+      "tp": 13,
+      "fp": 2,
+      "fn": 40
     },
     {
       "frame": 336,
       "ground_truth": 53,
       "predicted": 16,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 14,
+      "fp": 2,
+      "fn": 39
     },
     {
       "frame": 337,
       "ground_truth": 53,
       "predicted": 17,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 15,
+      "fp": 2,
+      "fn": 38
     },
     {
       "frame": 338,
       "ground_truth": 53,
       "predicted": 16,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 15,
+      "fp": 1,
+      "fn": 38
     },
     {
       "frame": 339,
       "ground_truth": 52,
       "predicted": 15,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 15,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 340,
       "ground_truth": 52,
       "predicted": 14,
       "error": -38,
-      "abs_error": 38
+      "abs_error": 38,
+      "tp": 13,
+      "fp": 1,
+      "fn": 39
     },
     {
       "frame": 341,
       "ground_truth": 52,
       "predicted": 14,
       "error": -38,
-      "abs_error": 38
+      "abs_error": 38,
+      "tp": 14,
+      "fp": 0,
+      "fn": 38
     },
     {
       "frame": 342,
       "ground_truth": 51,
       "predicted": 16,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 15,
+      "fp": 1,
+      "fn": 36
     },
     {
       "frame": 343,
       "ground_truth": 51,
       "predicted": 15,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 14,
+      "fp": 1,
+      "fn": 37
     },
     {
       "frame": 344,
       "ground_truth": 51,
       "predicted": 15,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 14,
+      "fp": 1,
+      "fn": 37
     },
     {
       "frame": 345,
       "ground_truth": 50,
       "predicted": 14,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 13,
+      "fp": 1,
+      "fn": 37
     },
     {
       "frame": 346,
       "ground_truth": 50,
       "predicted": 16,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 16,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 347,
       "ground_truth": 49,
       "predicted": 15,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 15,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 348,
       "ground_truth": 49,
       "predicted": 17,
       "error": -32,
-      "abs_error": 32
+      "abs_error": 32,
+      "tp": 17,
+      "fp": 0,
+      "fn": 32
     },
     {
       "frame": 349,
       "ground_truth": 48,
       "predicted": 17,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 17,
+      "fp": 0,
+      "fn": 31
     },
     {
       "frame": 350,
       "ground_truth": 48,
       "predicted": 13,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 13,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 351,
       "ground_truth": 48,
       "predicted": 14,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 14,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 352,
       "ground_truth": 47,
       "predicted": 15,
       "error": -32,
-      "abs_error": 32
+      "abs_error": 32,
+      "tp": 15,
+      "fp": 0,
+      "fn": 32
     },
     {
       "frame": 353,
       "ground_truth": 46,
       "predicted": 15,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 14,
+      "fp": 1,
+      "fn": 32
     },
     {
       "frame": 354,
       "ground_truth": 46,
       "predicted": 17,
       "error": -29,
-      "abs_error": 29
+      "abs_error": 29,
+      "tp": 16,
+      "fp": 1,
+      "fn": 30
     },
     {
       "frame": 355,
       "ground_truth": 46,
       "predicted": 19,
       "error": -27,
-      "abs_error": 27
+      "abs_error": 27,
+      "tp": 18,
+      "fp": 1,
+      "fn": 28
     },
     {
       "frame": 356,
       "ground_truth": 47,
       "predicted": 19,
       "error": -28,
-      "abs_error": 28
+      "abs_error": 28,
+      "tp": 19,
+      "fp": 0,
+      "fn": 28
     },
     {
       "frame": 357,
       "ground_truth": 47,
       "predicted": 19,
       "error": -28,
-      "abs_error": 28
+      "abs_error": 28,
+      "tp": 19,
+      "fp": 0,
+      "fn": 28
     },
     {
       "frame": 358,
       "ground_truth": 47,
       "predicted": 18,
       "error": -29,
-      "abs_error": 29
+      "abs_error": 29,
+      "tp": 18,
+      "fp": 0,
+      "fn": 29
     },
     {
       "frame": 359,
       "ground_truth": 47,
       "predicted": 16,
       "error": -31,
-      "abs_error": 31
+      "abs_error": 31,
+      "tp": 16,
+      "fp": 0,
+      "fn": 31
     },
     {
       "frame": 360,
       "ground_truth": 47,
       "predicted": 15,
       "error": -32,
-      "abs_error": 32
+      "abs_error": 32,
+      "tp": 15,
+      "fp": 0,
+      "fn": 32
     },
     {
       "frame": 361,
       "ground_truth": 47,
       "predicted": 15,
       "error": -32,
-      "abs_error": 32
+      "abs_error": 32,
+      "tp": 15,
+      "fp": 0,
+      "fn": 32
     },
     {
       "frame": 362,
       "ground_truth": 47,
       "predicted": 15,
       "error": -32,
-      "abs_error": 32
+      "abs_error": 32,
+      "tp": 15,
+      "fp": 0,
+      "fn": 32
     },
     {
       "frame": 363,
       "ground_truth": 47,
       "predicted": 14,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 14,
+      "fp": 0,
+      "fn": 33
     },
     {
       "frame": 364,
       "ground_truth": 47,
       "predicted": 15,
       "error": -32,
-      "abs_error": 32
+      "abs_error": 32,
+      "tp": 14,
+      "fp": 1,
+      "fn": 33
     },
     {
       "frame": 365,
       "ground_truth": 47,
       "predicted": 11,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 11,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 366,
       "ground_truth": 48,
       "predicted": 12,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 12,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 367,
       "ground_truth": 48,
       "predicted": 13,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 13,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 368,
       "ground_truth": 48,
       "predicted": 14,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 14,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 369,
       "ground_truth": 48,
       "predicted": 14,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 14,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 370,
       "ground_truth": 48,
       "predicted": 15,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 15,
+      "fp": 0,
+      "fn": 33
     },
     {
       "frame": 371,
       "ground_truth": 48,
       "predicted": 15,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 15,
+      "fp": 0,
+      "fn": 33
     },
     {
       "frame": 372,
       "ground_truth": 48,
       "predicted": 15,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 15,
+      "fp": 0,
+      "fn": 33
     },
     {
       "frame": 373,
       "ground_truth": 48,
       "predicted": 15,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 15,
+      "fp": 0,
+      "fn": 33
     },
     {
       "frame": 374,
       "ground_truth": 48,
       "predicted": 15,
       "error": -33,
-      "abs_error": 33
+      "abs_error": 33,
+      "tp": 15,
+      "fp": 0,
+      "fn": 33
     },
     {
       "frame": 375,
       "ground_truth": 48,
       "predicted": 14,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 14,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 376,
       "ground_truth": 48,
       "predicted": 14,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 14,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 377,
       "ground_truth": 48,
       "predicted": 14,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 14,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 378,
       "ground_truth": 48,
       "predicted": 14,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 14,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 379,
       "ground_truth": 48,
       "predicted": 14,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 14,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 380,
       "ground_truth": 48,
       "predicted": 14,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 14,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 381,
       "ground_truth": 48,
       "predicted": 13,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 13,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 382,
       "ground_truth": 48,
       "predicted": 14,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 14,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 383,
       "ground_truth": 48,
       "predicted": 14,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 14,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 384,
       "ground_truth": 48,
       "predicted": 14,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 14,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 385,
       "ground_truth": 48,
       "predicted": 13,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 13,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 386,
       "ground_truth": 48,
       "predicted": 13,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 13,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 387,
       "ground_truth": 48,
       "predicted": 13,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 13,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 388,
       "ground_truth": 48,
       "predicted": 13,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 13,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 389,
       "ground_truth": 48,
       "predicted": 13,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 13,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 390,
       "ground_truth": 48,
       "predicted": 13,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 13,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 391,
       "ground_truth": 48,
       "predicted": 13,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 13,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 392,
       "ground_truth": 48,
       "predicted": 13,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 13,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 393,
       "ground_truth": 49,
       "predicted": 13,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 13,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 394,
       "ground_truth": 49,
       "predicted": 12,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 12,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 395,
       "ground_truth": 49,
       "predicted": 13,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 13,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 396,
       "ground_truth": 49,
       "predicted": 13,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 13,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 397,
       "ground_truth": 49,
       "predicted": 13,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 13,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 398,
       "ground_truth": 49,
       "predicted": 15,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 15,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 399,
       "ground_truth": 49,
       "predicted": 14,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 14,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 400,
       "ground_truth": 49,
       "predicted": 15,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 15,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 401,
       "ground_truth": 49,
       "predicted": 15,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 15,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 402,
       "ground_truth": 49,
       "predicted": 15,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 15,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 403,
       "ground_truth": 49,
       "predicted": 15,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 15,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 404,
       "ground_truth": 50,
       "predicted": 14,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 14,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 405,
       "ground_truth": 50,
       "predicted": 13,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 13,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 406,
       "ground_truth": 50,
       "predicted": 14,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 14,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 407,
       "ground_truth": 50,
       "predicted": 13,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 13,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 408,
       "ground_truth": 50,
       "predicted": 15,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 15,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 409,
       "ground_truth": 50,
       "predicted": 14,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 14,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 410,
       "ground_truth": 50,
       "predicted": 13,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 13,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 411,
       "ground_truth": 50,
       "predicted": 11,
       "error": -39,
-      "abs_error": 39
+      "abs_error": 39,
+      "tp": 11,
+      "fp": 0,
+      "fn": 39
     },
     {
       "frame": 412,
       "ground_truth": 50,
       "predicted": 12,
       "error": -38,
-      "abs_error": 38
+      "abs_error": 38,
+      "tp": 12,
+      "fp": 0,
+      "fn": 38
     },
     {
       "frame": 413,
       "ground_truth": 50,
       "predicted": 14,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 13,
+      "fp": 1,
+      "fn": 37
     },
     {
       "frame": 414,
       "ground_truth": 50,
       "predicted": 15,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 14,
+      "fp": 1,
+      "fn": 36
     },
     {
       "frame": 415,
       "ground_truth": 50,
       "predicted": 14,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 13,
+      "fp": 1,
+      "fn": 37
     },
     {
       "frame": 416,
       "ground_truth": 50,
       "predicted": 14,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 14,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 417,
       "ground_truth": 50,
       "predicted": 14,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 14,
+      "fp": 0,
+      "fn": 36
     },
     {
       "frame": 418,
       "ground_truth": 50,
       "predicted": 13,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 13,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 419,
       "ground_truth": 50,
       "predicted": 13,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 13,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 420,
       "ground_truth": 51,
       "predicted": 14,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 14,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 421,
       "ground_truth": 51,
       "predicted": 17,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 17,
+      "fp": 0,
+      "fn": 34
     },
     {
       "frame": 422,
       "ground_truth": 51,
       "predicted": 13,
       "error": -38,
-      "abs_error": 38
+      "abs_error": 38,
+      "tp": 12,
+      "fp": 1,
+      "fn": 39
     },
     {
       "frame": 423,
       "ground_truth": 51,
       "predicted": 15,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 14,
+      "fp": 1,
+      "fn": 37
     },
     {
       "frame": 424,
       "ground_truth": 51,
       "predicted": 12,
       "error": -39,
-      "abs_error": 39
+      "abs_error": 39,
+      "tp": 12,
+      "fp": 0,
+      "fn": 39
     },
     {
       "frame": 425,
       "ground_truth": 51,
       "predicted": 14,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 13,
+      "fp": 1,
+      "fn": 38
     },
     {
       "frame": 426,
       "ground_truth": 51,
       "predicted": 14,
       "error": -37,
-      "abs_error": 37
+      "abs_error": 37,
+      "tp": 14,
+      "fp": 0,
+      "fn": 37
     },
     {
       "frame": 427,
       "ground_truth": 51,
       "predicted": 16,
       "error": -35,
-      "abs_error": 35
+      "abs_error": 35,
+      "tp": 16,
+      "fp": 0,
+      "fn": 35
     },
     {
       "frame": 428,
       "ground_truth": 51,
       "predicted": 17,
       "error": -34,
-      "abs_error": 34
+      "abs_error": 34,
+      "tp": 15,
+      "fp": 2,
+      "fn": 36
     },
     {
       "frame": 429,
       "ground_truth": 51,
       "predicted": 15,
       "error": -36,
-      "abs_error": 36
+      "abs_error": 36,
+      "tp": 15,
+      "fp": 0,
+      "fn": 36
     }
   ]
 }

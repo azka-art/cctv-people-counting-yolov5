@@ -1,6 +1,6 @@
 # Model Card -- People Detection & Counting
 
-> **Version:** 1.1 | **Date:** 2025 | **Framework:** PyTorch (YOLOv5s via `torch.hub`)
+> **Version:** 1.2 | **Date:** 2025 | **Framework:** PyTorch (YOLOv5s via `torch.hub`)
 
 ---
 
@@ -78,49 +78,41 @@ Endpoint `POST /detect/image` returns:
 }
 ```
 
-> Coordinates in pixels relative to input image resolution. `score` is confidence [0.0-1.0].
-
 ---
 
 ## 4. Performance Metrics
 
-### 4.1 Standard Mode (conf=0.4)
+### 4.1 Counting Accuracy (MAE / MAPE)
 
-| Metric | Value |
-|---|---|
-| **Dataset** | MOT20-01 (429 frames, full sequence) |
-| **Confidence Threshold** | 0.4 |
-| **MAE (Mean Absolute Error)** | 32.38 |
-| **MAPE** | 69.78% |
-| **Inference Speed (FPS)** | 6.01 |
-| **Overcount frames** | 0 |
-| **Undercount frames** | 429 (100%) |
-| **Exact match frames** | 0 |
-| **Hardware** | Intel Core CPU |
+| Metric | Standard (conf=0.4) | Enhanced (conf=0.3) | Change |
+|---|---|---|---|
+| **MAE** | 32.38 | **10.71** | **-67%** |
+| **MAPE** | 69.78% | **22.81%** | **-67%** |
+| Overcount frames | 0 | 0 | -- |
+| Undercount frames | 429 (100%) | 426 | -- |
+| Exact match frames | 0 | 3 | -- |
 
-### 4.2 Enhanced Mode (CLAHE + Tile, conf=0.3)
+### 4.2 Detection Quality (IoU >= 0.5 matching)
 
-| Metric | Value |
-|---|---|
-| **Dataset** | MOT20-01 (429 frames, full sequence) |
-| **Confidence Threshold** | 0.3 |
-| **MAE (Mean Absolute Error)** | **10.71** |
-| **MAPE** | **22.81%** |
-| **Inference Speed (FPS)** | 0.33 |
-| **Overcount frames** | 0 |
-| **Undercount frames** | 426 |
-| **Exact match frames** | 3 |
-| **Hardware** | Intel Core CPU |
+| Metric | Standard (conf=0.4) | Enhanced (conf=0.3) | Change |
+|---|---|---|---|
+| **Precision** | **0.9831** | 0.7141 | Trade-off |
+| **Recall** | 0.2958 | **0.5490** | **+86%** |
+| **F1 Score** | 0.4547 | **0.6208** | **+37%** |
+| Total TP | 5,877 | 10,909 | +86% |
+| Total FP | 101 | 4,367 | Trade-off |
+| Total FN | 13,993 | 8,961 | -36% |
 
-### 4.3 Improvement Summary
+**Analysis:** Standard mode achieves near-perfect precision (98.3%) but misses ~70% of people (recall 29.6%). Enhanced mode dramatically improves recall to 54.9% by using CLAHE + tile inference, at the cost of lower precision (71.4%). The F1 score improves by 37%, confirming that the recall gain outweighs the precision trade-off for crowded transit monitoring use cases.
 
-| Metric | Standard -> Enhanced | Change |
+### 4.3 Performance
+
+| Metric | Standard | Enhanced |
 |---|---|---|
-| MAE | 32.38 -> 10.71 | **-67%** |
-| MAPE | 69.78% -> 22.81% | **-67%** |
-| FPS | 6.01 -> 0.33 | -95% (trade-off) |
-
-> Enhanced mode FPS can be significantly improved with GPU acceleration. Tile inference is parallelizable.
+| **Avg FPS** | 3.59 | 0.31 |
+| **Device** | CPU | CPU |
+| **Dataset** | MOT20-01 (429 frames) | MOT20-01 (429 frames) |
+| **Hardware** | Intel Core CPU | Intel Core CPU |
 
 ---
 
@@ -141,9 +133,10 @@ Endpoint `POST /detect/image` returns:
 | Priority | Step | Impact | Status |
 |---|---|---|---|
 | **High** | CLAHE preprocessing | Reduce FN in backlight/dark | Done |
-| **High** | Tile-based inference | Detect small/distant people | Done |
+| **High** | Tile-based inference | Recall 0.296 -> 0.549 | Done |
 | **High** | Aggressive NMS + min area filter | Reduce FP from tile overlap | Done |
 | **High** | IoU-based tracking (SORT-lite) | Persistent IDs, unique counting | Done |
+| **High** | Precision/Recall evaluation | Detection quality beyond counting | Done |
 | **Medium** | Fine-tuning on CCTV transport data | Better accuracy for halte conditions | Future |
 | **Medium** | Virtual tripwire / line crossing | Accurate entry/exit counting | Future |
 | **Low** | Model upgrade to YOLOv8m/YOLOv9 | Higher mAP on dense crowds | Future |

@@ -19,7 +19,9 @@ Setiap kasus diidentifikasi dari output `src/evaluation/evaluate.py` dengan lang
 
 ## Ringkasan Statistik
 
-Evaluasi dilakukan pada dataset MOT20-01 dengan dua mode:
+Evaluasi dilakukan pada dataset MOT20-01 (429 frames) dengan dua mode:
+
+### Counting Metrics
 
 | Metrik | Standard (conf=0.4) | Enhanced (conf=0.3) |
 |---|---|---|
@@ -30,7 +32,15 @@ Evaluasi dilakukan pada dataset MOT20-01 dengan dua mode:
 | Frame dengan overcount | 0 | 0 |
 | Frame exact match | 0 | 3 |
 
-Enhanced mode (CLAHE + tile-based inference) mengurangi MAE sebesar **67%**.
+### Detection Metrics (IoU >= 0.5)
+
+| Metrik | Standard (conf=0.4) | Enhanced (conf=0.3) |
+|---|---|---|
+| Precision | 0.983 | 0.714 |
+| Recall | 0.296 | 0.549 |
+| F1 Score | 0.455 | 0.621 |
+
+Enhanced mode mengurangi MAE sebesar **67%** dan meningkatkan recall sebesar **86%** (F1 +37%).
 
 ---
 
