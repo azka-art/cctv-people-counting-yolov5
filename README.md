@@ -6,7 +6,7 @@ CCTV-like **People Detection & Counting** system built for monitoring passenger 
 
 ## Why This Matters for TransJakarta
 
-TransJakarta operates 260+ halte (stations) serving 1M+ daily passengers. Overcrowding at stations during peak hours creates safety risks and degrades service quality. This system provides automated passenger counting from CCTV feeds to:
+TransJakarta serves over 1 million daily trips across hundreds of BRT shelters (halte) throughout Jakarta. Overcrowding at stations during peak hours creates safety risks and degrades service quality. This system provides automated passenger counting from CCTV feeds to:
 
 - **Monitor station capacity** — detect when platforms approach unsafe density levels
 - **Optimize fleet dispatch** — route additional buses to high-demand corridors
@@ -162,6 +162,8 @@ curl -X POST "http://localhost:8000/detect/image?enhance=true&conf=0.3" \
 }
 ```
 
+> `count` = number of detected persons after NMS and person-class filter at the given confidence threshold. This is a per-image count (not tracked across frames).
+
 > **Tip:** Interactive API docs at `http://localhost:8000/docs` (Swagger UI).
 
 ---
@@ -191,23 +193,23 @@ This project is container-based and cloud-ready. The Docker image can be deploye
 # Build production image
 docker build -t tj-cv-api -f docker/Dockerfile .
 
-# Run with configurable port (Cloud Run compatible)
-docker run -p 8080:8000 tj-cv-api
+# Run locally (container listens on port 8000)
+docker run -p 8000:8000 tj-cv-api
 
 # Verify
-curl http://localhost:8080/              # {"status": "ok"}
-curl -X POST http://localhost:8080/detect/image -F "file=@assets/sample.jpg"
+curl http://localhost:8000/              # {"status": "ok"}
+curl -X POST http://localhost:8000/detect/image -F "file=@assets/sample.jpg"
 ```
 
 **Tested deployment targets:**
 
 | Platform | Method | Notes |
 |---|---|---|
-| **Google Cloud Run** | `gcloud run deploy --image <IMAGE>` | Set `--memory 2Gi --cpu 2 --concurrency 1` |
+| **Google Cloud Run** | `gcloud run deploy --image <IMAGE> --port 8000` | Container binds to 8000; Cloud Run routes traffic accordingly |
 | **AWS ECS Fargate** | Task definition + service | CPU-only, no GPU required |
 | **Any Docker host** | `docker run -p 8000:8000` | Works on any VPS/VM |
 
-For Cloud Run deployment, add `ENV PORT=8080` to Dockerfile and adjust CMD to bind to `$PORT`.
+> **Cloud Run note:** The container listens on port 8000. Use `--port 8000` in your `gcloud run deploy` command so Cloud Run routes to the correct port. Alternatively, modify the Dockerfile CMD to bind to `$PORT` for full Cloud Run native compatibility.
 
 ---
 
@@ -240,6 +242,8 @@ The `--track` flag enables IoU-based multi-object tracking (SORT-lite), which:
 - Displays **color-coded bounding boxes** per tracked individual
 - Reports **total unique persons** seen throughout the video (not just per-frame count)
 - Uses greedy IoU matching for simplicity and zero additional dependencies
+
+> **Note:** Unique total is approximate and may over-count when tracks are lost during occlusion and re-initialized as new IDs.
 
 ```bash
 python -m src.inference.inference_video \
@@ -358,4 +362,4 @@ See [Error Analysis](src/evaluation/error_analysis.md) for detailed failure mode
 
 ## License
 
-This project is for portfolio/educational purposes. Model weights (YOLOv5s) follow the [Ultralytics AGPL-3.0 License](https://github.com/ultralytics/yolov5/blob/master/LICENSE).
+This project is for portfolio/educational purposes. It uses [Ultralytics YOLOv5](https://github.com/ultralytics/yolov5) under the [AGPL-3.0 License](https://github.com/ultralytics/yolov5/blob/master/LICENSE). Users deploying this as a network service should review AGPL-3.0 compliance requirements (or consider Ultralytics Enterprise licensing).
