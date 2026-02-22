@@ -1,0 +1,26 @@
+# Dataset mentah
+data/
+
+# Model weights
+*.pt
+*.pth
+*.onnx
+*.weights
+
+# Python cache
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# Output sementara
+outputs/
+runs/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
