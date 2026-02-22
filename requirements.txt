@@ -1,29 +1,33 @@
-# Core DL + CV
+# Core Deep Learning
 torch>=2.0.0
 torchvision>=0.15.0
-ultralytics>=8.0.0
 
+# Computer Vision
 opencv-python-headless>=4.8.0
 Pillow>=10.0.0
 numpy>=1.24.0
 
-# YOLOv5 torch.hub dependency (prevents pandas import error)
-pandas>=2.0.0
-
-# Utilities
-tqdm>=4.66.0
+# YOLO (for torch.hub + general CV utils)
+ultralytics>=8.0.0
 PyYAML>=6.0.1
-python-dotenv>=1.0.0
+tqdm>=4.66.0
+scipy>=1.11.0
+pandas>=2.0.0
+matplotlib>=3.8.0
+seaborn>=0.13.0
+ipython>=8.0.0
+
+# Common runtime utilities (often needed by YOLOv5 hub code)
+requests>=2.31.0
+packaging>=23.2
+psutil>=5.9.8
+gitpython>=3.1.40
+
+# Fix for pkg_resources import (YOLOv5 hub expects this)
+setuptools>=65.0.0
+wheel>=0.41.0
 
 # API
 fastapi>=0.110.0
 uvicorn[standard]>=0.29.0
 python-multipart>=0.0.9
-pydantic>=2.0.0
-
-# Evaluation + plotting (recommended)
-matplotlib>=3.8.0
-seaborn>=0.13.0
-scikit-learn>=1.4.0
-scipy>=1.11.0
-

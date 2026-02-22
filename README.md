@@ -6,7 +6,7 @@ CCTV-like **People Detection & Counting** system built for monitoring passenger 
 
 ## Why This Matters for TransJakarta
 
-TransJakarta operates 250+ halte (stations) serving 1M+ daily passengers. Overcrowding at stations during peak hours creates safety risks and degrades service quality. This system provides automated passenger counting from CCTV feeds to:
+TransJakarta operates 260+ halte (stations) serving 1M+ daily passengers. Overcrowding at stations during peak hours creates safety risks and degrades service quality. This system provides automated passenger counting from CCTV feeds to:
 
 - **Monitor station capacity** — detect when platforms approach unsafe density levels
 - **Optimize fleet dispatch** — route additional buses to high-demand corridors
@@ -16,29 +16,40 @@ TransJakarta operates 250+ halte (stations) serving 1M+ daily passengers. Overcr
 
 ## Demo
 
-| Input | Output |
+| Standard Mode | Enhanced Mode |
 |---|---|
-| `assets/demo_input.mp4` | `assets/demo_output.mp4` |
+| ![Standard](assets/sample_outputs/out_standard.jpg) | ![Enhanced](assets/sample_outputs/out_enhanced.jpg) |
 
-Output video contains: bounding boxes per person, confidence scores, and **People Count** overlay on every frame.
+Video demo: `assets/demo_input.mp4` → `assets/demo_output.mp4` (annotated with bbox + confidence + People Count overlay on every frame).
 
 ---
 
 ## Key Results
 
-Evaluated on MOT20-01 dataset (crowded pedestrian scenes with ground truth annotations):
+Evaluated on **MOT20-01** dataset (429 frames, crowded pedestrian scenes with ground truth annotations):
 
 | Metric | Standard Mode | Enhanced Mode | Improvement |
 |---|---|---|---|
-| **MAE (per frame)** | 32.38 | **7.0** | ↓ 78% |
-| **MAPE (per frame)** | 69.78% | **19.13%** | ↓ 72% |
-| **Avg FPS** | 3.64 | 0.35 | Trade-off |
+| **MAE (per frame)** | 32.38 | **10.71** | **-67%** |
+| **MAPE (per frame)** | 69.78% | **22.81%** | **-67%** |
+| **Avg FPS** | 6.01 | 0.33 | Trade-off |
 | **Confidence** | 0.4 | 0.3 | — |
-| **Frames Evaluated** | 429 | 50 | — |
+| **Frames Evaluated** | 429 | 429 | Full sequence |
+| **Exact Match Frames** | 0 | 3 | — |
 
-> **Enhanced mode** uses CLAHE preprocessing + tile-based inference to dramatically improve detection in crowded scenes. See [Enhancement Details](#enhanced-mode) below.
+> **Enhanced mode** uses CLAHE preprocessing + tile-based inference to reduce counting error by 67%. See [Enhancement Details](#enhanced-mode) below.
 
-Hardware: Intel Core CPU | Device: CPU | Dataset: MOT20-01
+<details>
+<summary><b>Results Provenance</b> (click to expand)</summary>
+
+- **Dataset:** MOT20-01 (MOTChallenge, downloaded from motchallenge.net)
+- **Model:** YOLOv5s pretrained COCO via `torch.hub`
+- **Hardware:** Intel Core CPU, Python 3.12
+- **Standard run:** `python -m src.evaluation.evaluate --dataset data/mot20/train/MOT20-01 --conf 0.4 --device cpu --output assets/sample_outputs/eval_results.json --save-samples assets/sample_outputs/`
+- **Enhanced run:** `python -m src.evaluation.evaluate --dataset data/mot20/train/MOT20-01 --conf 0.3 --device cpu --enhance --output assets/sample_outputs/eval_results_enhanced.json --save-samples assets/sample_outputs/`
+- **Results files:** [`eval_results.json`](assets/sample_outputs/eval_results.json) and [`eval_results_enhanced.json`](assets/sample_outputs/eval_results_enhanced.json)
+
+</details>
 
 ---
 
@@ -47,9 +58,10 @@ Hardware: Intel Core CPU | Device: CPU | Dataset: MOT20-01
 | Component | Technology |
 |---|---|
 | Detection Model | YOLOv5s (pretrained COCO, via `torch.hub`) |
-| Deep Learning | PyTorch ≥ 2.0 |
-| Video Processing | OpenCV ≥ 4.8 |
-| Image I/O | Pillow (PIL) ≥ 10.0 |
+| Deep Learning | PyTorch >= 2.0 |
+| Video Processing | OpenCV >= 4.8 |
+| Image I/O | Pillow (PIL) >= 10.0 |
+| Tracking | IoU-based tracker (SORT-lite, built-in) |
 | API Framework | FastAPI + Uvicorn |
 | Container | Docker |
 
@@ -60,7 +72,7 @@ Hardware: Intel Core CPU | Device: CPU | Dataset: MOT20-01
 ### 1. Setup
 
 ```bash
-git clone https://github.com/<your-username>/cctv-people-counting-yolov5.git
+git clone https://github.com/azka-art/cctv-people-counting-yolov5.git
 cd cctv-people-counting-yolov5
 
 python -m venv .venv
@@ -70,7 +82,7 @@ source .venv/bin/activate          # Linux/macOS
 pip install -r requirements.txt
 ```
 
-> **Note:** YOLOv5s weights auto-download on first run (~14MB). Internet access required on first execution.
+> **Note:** YOLOv5s weights auto-download on first run (~14MB). Internet required on first execution.
 
 ### 2. Image Inference
 
@@ -91,10 +103,17 @@ python -m src.inference.inference_image \
 ### 3. Video Inference
 
 ```bash
+# Standard with tracking
 python -m src.inference.inference_video \
     --input assets/demo_input.mp4 \
     --output assets/demo_output.mp4 \
-    --conf 0.3 --device cpu --enhance
+    --conf 0.4 --device cpu --track
+
+# Enhanced + tracking (best accuracy)
+python -m src.inference.inference_video \
+    --input assets/demo_input.mp4 \
+    --output assets/demo_output.mp4 \
+    --conf 0.3 --device cpu --enhance --track
 ```
 
 ### 4. API Server
@@ -157,16 +176,36 @@ The system implements two enhancement techniques that directly address documente
 **Contrast Limited Adaptive Histogram Equalization** normalizes local contrast to recover detail in dark/overexposed regions. This mitigates false negatives caused by backlight and poor lighting conditions (Error Analysis Case 4).
 
 ### 2. Tile-Based Inference
-Splits the frame into overlapping 640px tiles, runs detection on each tile, then merges results with aggressive NMS (IoU=0.3) and minimum box area filtering (1500px²). This catches small/distant people that full-image inference misses (Error Analysis Cases 1 & 5).
+Splits the frame into overlapping 640px tiles, runs detection on each tile, then merges results with aggressive NMS (IoU=0.3) and minimum box area filtering (1500px2). This catches small/distant people that full-image inference misses (Error Analysis Cases 1 & 5).
 
 | Technique | Mitigates | Impact |
 |---|---|---|
 | CLAHE | Backlight / low-light FN | Recovers silhouette detail |
-| Tile inference | Small/distant people FN | 5→28 detections on crowded test image |
+| Tile inference | Small/distant people FN | 5 to 28 detections on crowded test image |
 | Aggressive NMS | Duplicate boxes from tiles | Reduces FP from tile overlap |
-| Min box area filter | Noise/spurious detections | Removes boxes < 1500px² |
+| Min box area filter | Noise/spurious detections | Removes boxes < 1500px2 |
 
 Enable with `--enhance` flag on any CLI command or `?enhance=true` API parameter.
+
+---
+
+## Tracking Mode
+
+The `--track` flag enables IoU-based multi-object tracking (SORT-lite), which:
+
+- Assigns **persistent unique IDs** to each detected person across frames
+- Displays **color-coded bounding boxes** per tracked individual
+- Reports **total unique persons** seen throughout the video (not just per-frame count)
+- Uses greedy IoU matching for simplicity and zero additional dependencies
+
+```bash
+python -m src.inference.inference_video \
+    --input assets/demo_input.mp4 \
+    --output assets/demo_output_tracked.mp4 \
+    --conf 0.3 --device cpu --enhance --track
+```
+
+This addresses the key limitation of per-frame counting where the same person is counted repeatedly across frames.
 
 ---
 
@@ -187,7 +226,7 @@ python -m src.evaluation.evaluate \
     --dataset data/mot20/train/MOT20-01 \
     --conf 0.3 --device cpu --enhance \
     --output assets/sample_outputs/eval_results_enhanced.json \
-    --save-samples assets/sample_outputs/ --max-frames 50
+    --save-samples assets/sample_outputs/
 ```
 
 > See [MODEL_CARD.md](MODEL_CARD.md) for full model details and performance metrics.
@@ -200,27 +239,28 @@ Documented in [`src/evaluation/error_analysis.md`](src/evaluation/error_analysis
 
 5 concrete failure cases with root cause analysis and mitigations:
 
-1. **Severe Occlusion** — undercount when passengers overlap (FN) → mitigated by tile inference
+1. **Severe Occlusion** — undercount when passengers overlap (FN) — mitigated by tile inference
 2. **Motion Blur** — missed detections on fast-moving people (FN)
-3. **Poster/Ads** — human figures in ads detected as real people (FP) → mitigated by min area filter
-4. **Backlight/Low Light** — silhouettes not detected (FN) → mitigated by CLAHE
-5. **High Density + Distance** — small distant people missed (FN) → mitigated by tile inference
+3. **Poster/Ads** — human figures in ads detected as real people (FP) — mitigated by min area filter
+4. **Backlight/Low Light** — silhouettes not detected (FN) — mitigated by CLAHE
+5. **High Density + Distance** — small distant people missed (FN) — mitigated by tile inference
 
 ---
 
 ## Project Structure
 
 ```
-├── README.md                         # This file
-├── MODEL_CARD.md                     # Model details, metrics, limitations
-├── DATA_SOURCES.md                   # Dataset sources and download instructions
-├── requirements.txt                  # Python dependencies
+├── README.md
+├── MODEL_CARD.md
+├── DATA_SOURCES.md
+├── requirements.txt
 ├── .gitignore
 ├── src/
 │   ├── inference/
 │   │   ├── inference_image.py        # Image detection (PIL + YOLOv5s)
 │   │   ├── inference_video.py        # Video detection (OpenCV + YOLOv5s)
 │   │   ├── enhance.py               # CLAHE + tile-based inference
+│   │   ├── tracker.py               # IoU-based multi-object tracker
 │   │   └── visualize.py             # Visualization helper
 │   ├── api/
 │   │   ├── app.py                    # FastAPI application
@@ -233,17 +273,26 @@ Documented in [`src/evaluation/error_analysis.md`](src/evaluation/error_analysis
 └── assets/
     ├── demo_input.mp4               # Demo input video
     ├── demo_output.mp4              # Demo output (annotated)
-    └── sample_outputs/              # Sample annotated images
+    └── sample_outputs/              # Screenshots, eval JSON, error frames
 ```
+
+---
+
+## Reproducibility
+
+- **Model:** YOLOv5s via `torch.hub.load('ultralytics/yolov5', 'yolov5s')`
+- **Weights:** Auto-downloaded to `~/.cache/torch/hub/` (14MB, not committed to Git)
+- **Docker:** Pre-downloads weights at build time for offline inference
+- **Evaluation artifacts:** `assets/sample_outputs/eval_results*.json` committed with exact run parameters
 
 ---
 
 ## Limitations
 
-- **No tracking** — Each frame is independent; the same person may be counted multiple times across frames. Future work: SORT/DeepSORT integration.
+- **Tracking is IoU-only** — no appearance features or Kalman prediction; may lose tracks during heavy occlusion or fast movement. Upgrade to DeepSORT for better re-identification.
 - **Pretrained model** — YOLOv5s trained on COCO may underperform on extreme occlusion or unusual angles without fine-tuning.
-- **Enhanced mode FPS** — Tile-based inference runs at ~0.35 FPS on CPU. GPU acceleration or model optimization needed for real-time use.
-- **Not production-grade** — This is a portfolio demonstration. Production deployment requires fine-tuning on domain data, tracking, and hardware optimization.
+- **Enhanced mode FPS** — Tile-based inference runs at ~0.33 FPS on CPU. GPU acceleration needed for real-time use.
+- **Not production-grade** — This is a portfolio demonstration. Production deployment requires fine-tuning on domain data and hardware optimization.
 
 See [Error Analysis](src/evaluation/error_analysis.md) for detailed failure mode documentation.
 
@@ -253,9 +302,9 @@ See [Error Analysis](src/evaluation/error_analysis.md) for detailed failure mode
 
 | Priority | Improvement | Impact |
 |---|---|---|
-| High | SORT/DeepSORT tracking | Eliminate double-counting, enable flow counting |
 | High | Fine-tune on CCTV transport dataset | Better accuracy for halte conditions |
 | High | GPU deployment | Real-time enhanced mode inference |
+| Medium | DeepSORT with appearance features | Better re-identification after occlusion |
 | Medium | Virtual tripwire line crossing | Accurate entry/exit counting |
 | Low | Upgrade to YOLOv8m/YOLOv9 | Higher mAP on dense crowds |
 

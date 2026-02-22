@@ -1,11 +1,12 @@
 {
   "metrics": {
     "dataset": "data\\mot20\\train\\MOT20-01",
+    "mode": "Standard",
     "confidence_threshold": 0.4,
     "total_frames": 429,
     "mae": 32.38,
     "mape": 69.78,
-    "avg_fps": 3.64,
+    "avg_fps": 6.01,
     "frames_with_overcount": 0,
     "frames_with_undercount": 429,
     "frames_exact": 0,

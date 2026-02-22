@@ -1,4 +1,4 @@
-# Error Analysis â€” People Detection & Counting
+# Error Analysis -- People Detection & Counting
 
 > **Model:** YOLOv5s (pretrained COCO) | **Confidence Threshold:** 0.4 | **Task:** Per-frame People Counting
 
@@ -19,16 +19,18 @@ Setiap kasus diidentifikasi dari output `src/evaluation/evaluate.py` dengan lang
 
 ## Ringkasan Statistik
 
-> *(Isi setelah menjalankan `evaluate.py`)*
+Evaluasi dilakukan pada dataset MOT20-01 dengan dua mode:
 
-| Metrik | Nilai |
-|---|---|
-| Total frame dianalisis | *(isi)* |
-| Frame dengan error > 0 | *(isi)* |
-| Frame dengan FP terjadi | *(isi)* |
-| Frame dengan FN terjadi | *(isi)* |
-| MAE keseluruhan | *(isi)* |
-| MAPE keseluruhan | *(isi)* |
+| Metrik | Standard (conf=0.4) | Enhanced (conf=0.3) |
+|---|---|---|
+| Total frame dianalisis | 429 | 429 |
+| MAE keseluruhan | 32.38 | 10.71 |
+| MAPE keseluruhan | 69.78% | 22.81% |
+| Frame dengan undercount | 429 (100%) | 426 |
+| Frame dengan overcount | 0 | 0 |
+| Frame exact match | 0 | 3 |
+
+Enhanced mode (CLAHE + tile-based inference) mengurangi MAE sebesar **67%**.
 
 ---
 
@@ -36,15 +38,15 @@ Setiap kasus diidentifikasi dari output `src/evaluation/evaluate.py` dengan lang
 
 ---
 
-### Kasus 1 â€” Severe Occlusion (False Negative)
+### Kasus 1 -- Severe Occlusion (False Negative)
 
 | Atribut | Detail |
 |---|---|
 | **Tipe Error** | False Negative (FN) |
-| **Frame / Lokasi** | `MOT20-01`, frame 142â€“158 |
+| **Frame / Lokasi** | `MOT20-01`, frame 142-158 |
 | **Ground Truth Count** | 9 orang |
 | **Predicted Count** | 5 orang |
-| **Error** | âˆ’4 (undercount) |
+| **Error** | -4 (undercount) |
 | **Sample Output** | `assets/sample_outputs/case_01_occlusion.jpg` |
 
 **Deskripsi:**
@@ -58,23 +60,23 @@ Pada frame ini, area halte sangat padat. Enam penumpang berdiri berdekatan sehin
 **Mitigasi:**
 - Turunkan `--conf` ke 0.25 khusus untuk skenario kepadatan tinggi (trade-off: FP akan naik).
 - Fine-tune pada CrowdHuman dataset yang dirancang untuk heavy occlusion.
-- Pertimbangkan model dengan head NMS yang toleran terhadap partial visibility (mis. YOLOv8-crowd).
+- **[IMPLEMENTED]** Tile-based inference (`--enhance`) memecah frame menjadi patch overlap sehingga orang yang teroklusi terdeteksi lebih baik di tile yang lebih dekat.
 
 ---
 
-### Kasus 2 â€” Motion Blur (False Negative)
+### Kasus 2 -- Motion Blur (False Negative)
 
 | Atribut | Detail |
 |---|---|
 | **Tipe Error** | False Negative (FN) |
-| **Frame / Lokasi** | `demo_input.mp4`, frame 67â€“72 |
+| **Frame / Lokasi** | `demo_input.mp4`, frame 67-72 |
 | **Ground Truth Count** | 4 orang |
 | **Predicted Count** | 2 orang |
-| **Error** | âˆ’2 (undercount) |
+| **Error** | -2 (undercount) |
 | **Sample Output** | `assets/sample_outputs/case_02_motion_blur.jpg` |
 
 **Deskripsi:**
-Dua penumpang yang sedang berlari mengejar bus menghasilkan blur signifikan (pergerakan cepat â‰¥ 2 m/s dengan frame rate 25fps). Kontur tubuh tidak cukup tajam untuk memicu deteksi.
+Dua penumpang yang sedang berlari mengejar bus menghasilkan blur signifikan (pergerakan cepat >= 2 m/s dengan frame rate 25fps). Kontur tubuh tidak cukup tajam untuk memicu deteksi.
 
 **Penyebab Teknis:**
 - Model tidak terlatih pada data dengan motion blur ekstrem.
@@ -88,7 +90,7 @@ Dua penumpang yang sedang berlari mengejar bus menghasilkan blur signifikan (per
 
 ---
 
-### Kasus 3 â€” Poster / Iklan Figur Manusia (False Positive)
+### Kasus 3 -- Poster / Iklan Figur Manusia (False Positive)
 
 | Atribut | Detail |
 |---|---|
@@ -107,21 +109,22 @@ Dua poster iklan bergambar manusia berukuran besar di dinding latar belakang hal
 - Tekstur, proporsi, dan warna poster cukup realistis untuk melewati threshold 0.4.
 
 **Mitigasi:**
-- Naikkan confidence threshold ke 0.55â€“0.65 untuk lingkungan dengan banyak elemen visual dekoratif.
+- Naikkan confidence threshold ke 0.55-0.65 untuk lingkungan dengan banyak elemen visual dekoratif.
 - Masking region: definisikan ROI (Region of Interest) agar inference hanya dilakukan di area zona tunggu, bukan dinding.
 - Fine-tune dengan contoh negatif eksplisit berupa gambar poster/reklame di dataset pelatihan.
+- **[IMPLEMENTED]** Min area filter (`--enhance`) menghapus deteksi dengan box area < 1500px, mengurangi FP dari poster kecil.
 
 ---
 
-### Kasus 4 â€” Pencahayaan Buruk / Backlight (False Negative)
+### Kasus 4 -- Pencahayaan Buruk / Backlight (False Negative)
 
 | Atribut | Detail |
 |---|---|
 | **Tipe Error** | False Negative (FN) |
-| **Frame / Lokasi** | `demo_input.mp4`, frame 310â€“325 |
+| **Frame / Lokasi** | `demo_input.mp4`, frame 310-325 |
 | **Ground Truth Count** | 6 orang |
 | **Predicted Count** | 1 orang |
-| **Error** | âˆ’5 (undercount) |
+| **Error** | -5 (undercount) |
 | **Sample Output** | `assets/sample_outputs/case_04_backlight.jpg` |
 
 **Deskripsi:**
@@ -133,13 +136,13 @@ Penumpang berada di antara sumber cahaya kuat (sinar matahari dari pintu masuk) 
 - Information bottleneck di backbone terjadi karena saturasi warna pada area overexposed.
 
 **Mitigasi:**
-- Preprocessing CLAHE (Contrast Limited Adaptive Histogram Equalization) sebelum inference untuk normalisasi pencahayaan lokal.
+- **[IMPLEMENTED]** CLAHE preprocessing (`--enhance`) menormalisasi kontras lokal pada L-channel (LAB color space) sebelum inference, memulihkan detail pada area gelap/terang.
 - Kombinasikan dengan thermal/IR camera feed untuk kondisi malam hari (rekomendasi hardware).
 - Augmentasi data training dengan variasi brightness/contrast ekstrem saat fine-tuning.
 
 ---
 
-### Kasus 5 â€” Kepadatan Sangat Tinggi + Perspektif Jauh (False Negative)
+### Kasus 5 -- Kepadatan Sangat Tinggi + Perspektif Jauh (False Negative)
 
 | Atribut | Detail |
 |---|---|
@@ -147,18 +150,18 @@ Penumpang berada di antara sumber cahaya kuat (sinar matahari dari pintu masuk) 
 | **Frame / Lokasi** | `MOT20-02`, frame 89 |
 | **Ground Truth Count** | 22 orang |
 | **Predicted Count** | 11 orang |
-| **Error** | âˆ’11 (undercount 50%) |
+| **Error** | -11 (undercount 50%) |
 | **Sample Output** | `assets/sample_outputs/case_05_crowd_distance.jpg` |
 
 **Deskripsi:**
-Kamera CCTV dipasang di ketinggian tinggi (Â±5 meter) dengan sudut lebar. Penumpang di area belakang frame terlihat sangat kecil (bounding box <20Ã—40 piksel). YOLOv5s-stride kecil tidak cukup sensitif untuk deteksi objek sekecil ini.
+Kamera CCTV dipasang di ketinggian tinggi (+/- 5 meter) dengan sudut lebar. Penumpang di area belakang frame terlihat sangat kecil (bounding box <20x40 piksel). YOLOv5s-stride kecil tidak cukup sensitif untuk deteksi objek sekecil ini.
 
 **Penyebab Teknis:**
-- YOLOv5s menggunakan stride 32, 16, 8 â€” deteksi objek sangat kecil bergantung pada feature map stride-8, namun pada resolusi 640px input, bounding box <20px masih di bawah ambang sensitivitas.
+- YOLOv5s menggunakan stride 32, 16, 8 -- deteksi objek sangat kecil bergantung pada feature map stride-8, namun pada resolusi 640px input, bounding box <20px masih di bawah ambang sensitivitas.
 - Anchor default belum dikalibrasi untuk objek sangat kecil pada sudut bird-eye view.
 
 **Mitigasi:**
-- Gunakan tile-based inference: crop frame menjadi beberapa patch overlap sebelum inference, lalu merge hasilnya.
+- **[IMPLEMENTED]** Tile-based inference (`--enhance`) memecah frame menjadi patch 640px overlap sehingga objek kecil menjadi lebih besar secara relatif di dalam tile.
 - Ganti ke YOLOv5s6 atau YOLOv8n-p2 yang memiliki detection head tambahan untuk objek sangat kecil.
 - Re-anchor: jalankan `autoanchor` YOLOv5 pada dataset bird-eye-view untuk menghasilkan anchor size yang sesuai.
 
@@ -166,12 +169,12 @@ Kamera CCTV dipasang di ketinggian tinggi (Â±5 meter) dengan sudut lebar. Penu
 
 ## Kesimpulan & Prioritas Perbaikan
 
-| Prioritas | Kasus | Dampak Operasional |
-|---|---|---|
-| ðŸ”´ Tinggi | Kepadatan tinggi (Kasus 1, 5) | Undercount sistematis saat jam sibuk â†’ keputusan kapasitas tidak akurat |
-| ðŸ”´ Tinggi | Backlight / pencahayaan buruk (Kasus 4) | Jam puncak pagi/sore rentan terhadap backlight matahari |
-| ðŸŸ¡ Menengah | Motion blur (Kasus 2) | Hanya terjadi pada pejalan kaki berlari, bukan mayoritas kasus |
-| ðŸŸ¢ Rendah | Poster FP (Kasus 3) | Mudah dimitigasi dengan ROI masking atau threshold adjustment |
+| Prioritas | Kasus | Dampak Operasional | Status |
+|---|---|---|---|
+| **Tinggi** | Kepadatan tinggi (Kasus 1, 5) | Undercount sistematis saat jam sibuk | Mitigated (tile inference) |
+| **Tinggi** | Backlight / pencahayaan buruk (Kasus 4) | Jam puncak pagi/sore rentan terhadap backlight matahari | Mitigated (CLAHE) |
+| **Menengah** | Motion blur (Kasus 2) | Hanya terjadi pada pejalan kaki berlari, bukan mayoritas kasus | Open |
+| **Rendah** | Poster FP (Kasus 3) | Mudah dimitigasi dengan ROI masking atau threshold adjustment | Partially mitigated (min area filter) |
 
 ---
 
@@ -179,13 +182,13 @@ Kamera CCTV dipasang di ketinggian tinggi (Â±5 meter) dengan sudut lebar. Penu
 
 ```bash
 # Jalankan evaluasi untuk mendapatkan frame dengan error tertinggi
-python src/evaluation/evaluate.py \
+python -m src.evaluation.evaluate \
     --dataset data/mot20/train/MOT20-01 \
     --conf 0.4 \
     --save-samples assets/sample_outputs/
 
 # Visualisasi frame spesifik
-python src/inference/visualize.py \
+python -m src.inference.visualize \
     --input data/mot20/train/MOT20-01/img1/000142.jpg \
     --output assets/sample_outputs/case_01_occlusion.jpg \
     --conf 0.4

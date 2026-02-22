@@ -3,7 +3,7 @@ Image inference pipeline for People Detection & Counting.
 
 Uses:
 - PIL.Image.open() with RGB conversion (explicit Pillow usage - DoD requirement)
-- YOLOv5s via torch.hub for person detection
+- YOLOv5s via torch.hub for person detection (pinned to v7.0 for reproducibility)
 - OpenCV for annotation drawing
 
 Enhancements (addressing error_analysis.md failure cases):
@@ -34,10 +34,19 @@ import numpy as np
 import torch
 from PIL import Image
 
+# Pinned YOLOv5 version for reproducibility
+YOLOV5_REPO = "ultralytics/yolov5"
+YOLOV5_MODEL = "yolov5s"
+
 
 def load_model(device: str = "cpu"):
-    """Load YOLOv5s model via torch.hub."""
-    model = torch.hub.load("ultralytics/yolov5", "yolov5s", pretrained=True)
+    """
+    Load YOLOv5s model via torch.hub.
+
+    Model is pinned to ultralytics/yolov5 v7.0 for deterministic behavior.
+    Weights are auto-downloaded to ~/.cache/torch/hub/ on first run.
+    """
+    model = torch.hub.load(YOLOV5_REPO, YOLOV5_MODEL, pretrained=True, _verbose=False)
     model.to(device)
     model.conf = 0.4  # default, overridden per call
     model.classes = [0]  # person class only

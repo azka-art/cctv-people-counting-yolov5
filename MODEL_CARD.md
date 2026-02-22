@@ -1,38 +1,38 @@
-# Model Card — People Detection & Counting
+# Model Card -- People Detection & Counting
 
-> **Versi:** 1.0 | **Tanggal:** 2025 | **Framework:** PyTorch (YOLOv5s via `torch.hub`)
+> **Version:** 1.1 | **Date:** 2025 | **Framework:** PyTorch (YOLOv5s via `torch.hub`)
 
 ---
 
 ## 1. Model Overview
 
-| Atribut | Detail |
+| Attribute | Detail |
 |---|---|
-| **Task** | Object Detection + Per-frame People Counting |
-| **Architecture** | YOLOv5s (Small variant — efisien, latency rendah) |
-| **Pretrained On** | COCO 2017 (80 kelas, termasuk `person` → Class 0) |
+| **Task** | Object Detection + Per-frame People Counting + Tracking |
+| **Architecture** | YOLOv5s (Small variant -- efficient, low latency) |
+| **Pretrained On** | COCO 2017 (80 classes, `person` = Class 0) |
 | **Model Source** | `torch.hub.load('ultralytics/yolov5', 'yolov5s')` |
-| **Output** | Bounding boxes, confidence scores, People Count overlay |
-| **Target Class** | `person` saja (kelas lain difilter di post-processing) |
-| **Default Confidence Threshold** | `0.4` (standard) / `0.3` (enhanced) |
+| **Output** | Bounding boxes, confidence scores, People Count overlay, track IDs |
+| **Target Class** | `person` only (other classes filtered in post-processing) |
+| **Default Confidence** | `0.4` (standard) / `0.3` (enhanced) |
 
 ---
 
 ## 2. Intended Use
 
-### 2.1 Skenario yang Sesuai
+### 2.1 Suitable Scenarios
 
-- **Pemantauan kepadatan halte BRT:** Menghitung jumlah orang di area tunggu atau koridor secara agregat per frame.
-- **Analisis throughput antrean:** Mengukur pergerakan penumpang pada kamera statis sudut elevasi tinggi.
-- **Demo pipeline end-to-end:** Menunjukkan integrasi Computer Vision ke layanan REST API dalam satu repository.
-- **Evaluasi kapasitas armada:** Sebagai sinyal awal load monitoring pada halte dengan volume penumpang tinggi.
+- **BRT station density monitoring:** Count people in waiting areas or corridors per frame.
+- **Queue throughput analysis:** Measure passenger flow on static elevated-angle cameras.
+- **End-to-end pipeline demo:** CV-to-REST-API integration in one repository.
+- **Fleet capacity evaluation:** Early load monitoring signal for high-volume stations.
 
-### 2.2 Skenario yang TIDAK Sesuai (Out-of-Scope)
+### 2.2 Out-of-Scope
 
-- ❌ Identifikasi biometrik atau face recognition individu.
-- ❌ Pelacakan identitas untuk keperluan penegakan hukum atau keamanan.
-- ❌ Pelaporan statistik resmi tanpa kalibrasi spasial dan validasi manual.
-- ❌ Deployment produksi kritis tanpa audit bias dan akurasi tambahan pada data domain.
+- Biometric identification or face recognition.
+- Identity tracking for law enforcement or surveillance.
+- Official statistical reporting without spatial calibration and manual validation.
+- Critical production deployment without bias audit and domain-specific accuracy validation.
 
 ---
 
@@ -40,38 +40,45 @@
 
 ### 3.1 Standard Mode
 
-| Langkah | Tools | Keterangan |
+| Step | Tools | Description |
 |---|---|---|
-| Load gambar | `PIL.Image.open()` → konversi RGB | Digunakan di `inference_image.py` |
-| Load frame video | `cv2.VideoCapture` → BGR ke RGB | Digunakan di `inference_video.py` |
-| Resize otomatis | YOLOv5 internal (letterbox) | Model menangani resize ke 640×640 |
-| Filter class | Post-processing | Hanya class 0 (person) |
+| Load image | `PIL.Image.open()` -> RGB conversion | Used in `inference_image.py` |
+| Load video frame | `cv2.VideoCapture` -> BGR to RGB | Used in `inference_video.py` |
+| Auto resize | YOLOv5 internal (letterbox) | Model handles resize to 640x640 |
+| Filter class | Post-processing | Only class 0 (person) |
 
 ### 3.2 Enhanced Mode
 
-| Langkah | Tools | Keterangan |
+| Step | Tools | Description |
 |---|---|---|
-| CLAHE preprocessing | `cv2.createCLAHE` pada L-channel (LAB) | Normalisasi kontras lokal |
-| Tile-based inference | 640px tiles, 25% overlap | Deteksi orang kecil/jauh |
-| Aggressive NMS | IoU threshold 0.3 | Hapus duplikat dari tile overlap |
-| Min area filter | 1500px² minimum | Hapus deteksi noise/spurious |
+| CLAHE preprocessing | `cv2.createCLAHE` on L-channel (LAB) | Local contrast normalization |
+| Tile-based inference | 640px tiles, 25% overlap | Detect small/distant people |
+| Aggressive NMS | IoU threshold 0.3 | Remove duplicates from tile overlap |
+| Min area filter | 1500px2 minimum | Remove noise/spurious detections |
 
-### 3.3 Output Format — API Contract
+### 3.3 Tracking Mode
 
-Endpoint `POST /detect/image` mengembalikan JSON dengan struktur **persis** berikut:
+| Step | Tools | Description |
+|---|---|---|
+| IoU matching | `SimpleTracker` (SORT-lite) | Match detections to existing tracks |
+| ID assignment | Greedy highest-IoU-first | Persistent unique IDs per person |
+| Track management | max_disappeared=fps | Remove lost tracks after ~1 sec |
+
+### 3.4 Output Format -- API Contract
+
+Endpoint `POST /detect/image` returns:
 
 ```json
 {
   "count": 28,
   "detections": [
     { "x1": 15,  "y1": 30,  "x2": 110, "y2": 240, "score": 0.88 },
-    { "x1": 200, "y1": 45,  "x2": 310, "y2": 250, "score": 0.76 },
-    { "x1": 400, "y1": 60,  "x2": 490, "y2": 235, "score": 0.61 }
+    { "x1": 200, "y1": 45,  "x2": 310, "y2": 250, "score": 0.76 }
   ]
 }
 ```
 
-> Koordinat dalam piksel relatif terhadap resolusi gambar input. `score` adalah confidence value [0.0–1.0].
+> Coordinates in pixels relative to input image resolution. `score` is confidence [0.0-1.0].
 
 ---
 
@@ -79,94 +86,74 @@ Endpoint `POST /detect/image` mengembalikan JSON dengan struktur **persis** beri
 
 ### 4.1 Standard Mode (conf=0.4)
 
-| Metrik | Nilai |
+| Metric | Value |
 |---|---|
-| **Dataset Evaluasi** | MOT20-01 (429 frames) |
+| **Dataset** | MOT20-01 (429 frames, full sequence) |
 | **Confidence Threshold** | 0.4 |
 | **MAE (Mean Absolute Error)** | 32.38 |
-| **MAPE (Mean Absolute Percentage Error)** | 69.78% |
-| **Inference Speed (FPS)** | 3.64 |
+| **MAPE** | 69.78% |
+| **Inference Speed (FPS)** | 6.01 |
 | **Overcount frames** | 0 |
 | **Undercount frames** | 429 (100%) |
+| **Exact match frames** | 0 |
 | **Hardware** | Intel Core CPU |
-| **Device** | CPU |
 
 ### 4.2 Enhanced Mode (CLAHE + Tile, conf=0.3)
 
-| Metrik | Nilai |
+| Metric | Value |
 |---|---|
-| **Dataset Evaluasi** | MOT20-01 (50 frames) |
+| **Dataset** | MOT20-01 (429 frames, full sequence) |
 | **Confidence Threshold** | 0.3 |
-| **MAE (Mean Absolute Error)** | **7.0** |
-| **MAPE (Mean Absolute Percentage Error)** | **19.13%** |
-| **Inference Speed (FPS)** | 0.35 |
+| **MAE (Mean Absolute Error)** | **10.71** |
+| **MAPE** | **22.81%** |
+| **Inference Speed (FPS)** | 0.33 |
 | **Overcount frames** | 0 |
-| **Undercount frames** | 50 (100%) |
+| **Undercount frames** | 426 |
+| **Exact match frames** | 3 |
 | **Hardware** | Intel Core CPU |
-| **Device** | CPU |
 
 ### 4.3 Improvement Summary
 
-| Metrik | Standard → Enhanced | Change |
+| Metric | Standard -> Enhanced | Change |
 |---|---|---|
-| MAE | 32.38 → 7.0 | **↓ 78%** |
-| MAPE | 69.78% → 19.13% | **↓ 72%** |
-| FPS | 3.64 → 0.35 | ↓ 90% (trade-off) |
+| MAE | 32.38 -> 10.71 | **-67%** |
+| MAPE | 69.78% -> 22.81% | **-67%** |
+| FPS | 6.01 -> 0.33 | -95% (trade-off) |
 
-> Enhanced mode FPS dapat ditingkatkan signifikan dengan GPU acceleration. Tile inference bersifat parallelizable.
-
-**Cara menjalankan evaluasi:**
-```bash
-# Standard
-python -m src.evaluation.evaluate \
-    --dataset data/mot20/train/MOT20-01 \
-    --conf 0.4 --device cpu \
-    --output assets/sample_outputs/eval_results.json
-
-# Enhanced
-python -m src.evaluation.evaluate \
-    --dataset data/mot20/train/MOT20-01 \
-    --conf 0.3 --device cpu --enhance \
-    --output assets/sample_outputs/eval_results_enhanced.json \
-    --max-frames 50
-```
+> Enhanced mode FPS can be significantly improved with GPU acceleration. Tile inference is parallelizable.
 
 ---
 
 ## 5. Limitations
 
-Sistem deteksi berbasis YOLOv5s pretrained COCO memiliki keterbatasan inheren yang perlu dipahami sebelum deployment. Detail lengkap ada di [`src/evaluation/error_analysis.md`](../src/evaluation/error_analysis.md).
-
-**Failure modes utama:**
-
-| # | Tipe | Kondisi | Dampak | Mitigasi |
+| # | Type | Condition | Impact | Mitigation |
 |---|---|---|---|---|
-| 1 | **False Negative** | Severe occlusion (>70% tubuh tertutup) | Undercount pada kondisi halte crush load | ✅ Tile inference |
-| 2 | **False Negative** | Motion blur frame (kecepatan ≥ 2 m/s) | Momen sibuk saat pintu bus terbuka | — |
-| 3 | **False Positive** | Poster/iklan figur manusia di dinding | Overcount pada area dengan visual display | ✅ Min area filter |
-| 4 | **False Negative** | Pencahayaan buruk (malam / backlight) | Deteksi gagal di halte minim penerangan | ✅ CLAHE |
-| 5 | **False Negative** | Kepadatan tinggi + perspektif jauh | Undercount 50% pada kamera elevated | ✅ Tile inference |
+| 1 | **False Negative** | Severe occlusion (>70% body occluded) | Undercount at crush load | Tile inference |
+| 2 | **False Negative** | Motion blur (speed >= 2 m/s) | Missed during door opening | -- |
+| 3 | **False Positive** | Poster/ads with human figures | Overcount near displays | Min area filter |
+| 4 | **False Negative** | Poor lighting (night / backlight) | Failed detection at dark stops | CLAHE |
+| 5 | **False Negative** | High density + distant perspective | 50% undercount at elevated cameras | Tile inference |
 
 ---
 
 ## 6. Mitigations & Future Work
 
-| Prioritas | Langkah | Dampak | Status |
+| Priority | Step | Impact | Status |
 |---|---|---|---|
-| **Tinggi** | CLAHE preprocessing | Mengurangi FN pada kondisi backlight/gelap | ✅ Implemented |
-| **Tinggi** | Tile-based inference | Deteksi orang kecil/jauh, mengurangi undercount | ✅ Implemented |
-| **Tinggi** | Aggressive NMS + min area filter | Mengurangi FP dari tile overlap dan noise | ✅ Implemented |
-| **Tinggi** | SORT/DeepSORT tracking | Eliminasi double-count, hitung flow masuk/keluar | ⬜ Future |
-| **Menengah** | Fine-tuning pada dataset CCTV transportasi | Akurasi lebih baik untuk kondisi halte Indonesia | ⬜ Future |
-| **Menengah** | Virtual tripwire / line crossing counter | Counting akurat untuk pintu masuk-keluar halte | ⬜ Future |
-| **Rendah** | Model upgrade ke YOLOv8m atau YOLOv9 | Peningkatan mAP pada kepadatan tinggi | ⬜ Future |
+| **High** | CLAHE preprocessing | Reduce FN in backlight/dark | Done |
+| **High** | Tile-based inference | Detect small/distant people | Done |
+| **High** | Aggressive NMS + min area filter | Reduce FP from tile overlap | Done |
+| **High** | IoU-based tracking (SORT-lite) | Persistent IDs, unique counting | Done |
+| **Medium** | Fine-tuning on CCTV transport data | Better accuracy for halte conditions | Future |
+| **Medium** | Virtual tripwire / line crossing | Accurate entry/exit counting | Future |
+| **Low** | Model upgrade to YOLOv8m/YOLOv9 | Higher mAP on dense crowds | Future |
 
 ---
 
 ## 7. Ethical Considerations
 
-Repository ini dibangun untuk tujuan **monitoring agregat kapasitas**, bukan surveillance individu. Implementasi sistem ini di lingkungan publik seperti TransJakarta harus mempertimbangkan:
+This repository is built for **aggregate capacity monitoring**, not individual surveillance. Deployment in public environments like TransJakarta must consider:
 
-- Transparansi kepada penumpang bahwa sistem counting aktif beroperasi.
-- Tidak menyimpan footage atau bounding box yang dapat mengidentifikasi individu.
-- Compliance dengan regulasi perlindungan data pribadi yang berlaku.
+- Transparency to passengers that a counting system is active.
+- No storage of footage or bounding boxes that could identify individuals.
+- Compliance with applicable personal data protection regulations.
