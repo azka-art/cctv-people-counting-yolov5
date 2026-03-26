@@ -1,3 +1,10 @@
+# ============================================================
+# Requirements — CCTV People Detection & Counting (YOLOv5)
+# ============================================================
+# Install: pip install -r requirements.txt
+# Tested:  Python 3.12, Windows/Linux, CPU-only
+# ============================================================
+
 # Core Deep Learning
 torch>=2.0.0
 torchvision>=0.15.0
@@ -6,6 +13,14 @@ torchvision>=0.15.0
 opencv-python-headless>=4.8.0
 Pillow>=10.0.0
 numpy>=1.24.0
+
+# ONNX Export & Verification
+onnx>=1.14.0
+onnxruntime>=1.16.0
+onnxscript>=0.1.0             # Required for torch.onnx.export on PyTorch 2.x
+
+# Object Tracking (SORT + Kalman filter)
+filterpy>=1.4.5
 
 # YOLO (for torch.hub + general CV utils)
 ultralytics>=8.0.0
