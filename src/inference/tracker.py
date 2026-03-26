@@ -163,7 +163,8 @@ class KalmanTrack:
     @staticmethod
     def _z_to_box(x: np.ndarray) -> np.ndarray:
         """Convert Kalman state [cx,cy,w,h,...] to [x1,y1,x2,y2]."""
-        cx, cy, w, h = float(x[0]), float(x[1]), float(x[2]), float(x[3])
+        flat = x.flatten()
+        cx, cy, w, h = float(flat[0]), float(flat[1]), float(flat[2]), float(flat[3])
         return np.array([cx - w / 2, cy - h / 2, cx + w / 2, cy + h / 2])
 
 
